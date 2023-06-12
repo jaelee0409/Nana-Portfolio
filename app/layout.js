@@ -25,12 +25,13 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  getData().then((data) => {
+  /*getData().then((data) => {
     console.log(data);
-  });
+  });*/
 
   return (
     <html lang="en" className={`${roboto_flex.variable} ${tinos.variable}`}>
+      <meta name="google" content="notranslate"></meta>
       <body className="flex flex-col h-screen md:max-w-7xl md:mx-auto p-2 md:p-16">
         <Navbar />
         <div className="flex-grow">{children}</div>
