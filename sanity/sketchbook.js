@@ -1,20 +1,19 @@
 export default {
-  name: "art",
-  title: "Art",
+  name: "sketchbook",
+  title: "Sketchbook",
   type: "document",
   fields: [
     {
       name: "image",
       title: "Image",
-      type: "array",
-      of: [{ type: "image" }],
+      type: "image",
       options: {
         hotspot: true,
       },
     },
     {
-      name: "project name",
-      title: "Project Name",
+      name: "name",
+      title: "Name",
       type: "string",
     },
     {

@@ -4,6 +4,8 @@ import { Roboto_Flex, Tinos } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
+import { client } from "../sanity/lib/client";
+
 const roboto_flex = Roboto_Flex({
   subsets: ["latin"],
   display: "swap",
@@ -22,16 +24,29 @@ export const metadata = {
   description: "",
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  getData().then((data) => {
+    console.log(data);
+  });
+
   return (
     <html lang="en" className={`${roboto_flex.variable} ${tinos.variable}`}>
-      <body className="overflow-scroll">
-        <div className="md:max-w-lg mx-auto px-4 py-2 md:p-20">
-          <Navbar />
-          {children}
-          <Footer />
-        </div>
+      <body className="flex flex-col h-screen md:max-w-7xl md:mx-auto p-2 md:p-16">
+        <Navbar />
+        <div className="flex-grow">{children}</div>
+        <Footer />
       </body>
     </html>
   );
+}
+
+export async function getData() {
+  const query = '*[_type == "art"]';
+
+  try {
+    const art = await client.fetch(query);
+    return art;
+  } catch (error) {
+    console.log("Data failed to fetch", error);
+  }
 }

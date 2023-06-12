@@ -1,7 +1,7 @@
 import React from "react";
 
 const SketchbookPage = () => {
-  return <div>SketchbookPage</div>;
+  return <div className="">SketchbookPage</div>;
 };
 
 export default SketchbookPage;

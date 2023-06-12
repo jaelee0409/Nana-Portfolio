@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex-end text-sm md:text-xs text-neutral-950/[.70] text-center mt-8">
+    <div className="text-sm text-primary text-center mt-8 md:mt-16 pb-4 md:pb-0">
       © Nana An 2023
     </div>
   );

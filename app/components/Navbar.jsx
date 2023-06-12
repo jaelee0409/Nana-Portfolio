@@ -2,13 +2,12 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="md:max-w-lg mx-auto mb-2 md:mb-8">
+    <nav className="md:max-w-xl md:mx-auto mb-2 md:mb-16">
       <div className="flex content-center justify-between">
         <div className="flex items-center">
           <div className="flex flex-start items-center">
@@ -21,10 +20,13 @@ const Navbar = () => {
                   (e.currentTarget.src = "/nav_hover_1_NANA_2.png")
                 }
                 onMouseOut={(e) => (e.currentTarget.src = "/nav_1_NANA_2.png")}
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
               />
             </Link>
           </div>
-          <div className="hidden md:flex flex-end items-center ml-20 space-x-2">
+          <div className="hidden md:flex flex-end items-center ml-24 space-x-2">
             <Link href="/">
               <img
                 src="/nav_2_ART.png"
@@ -67,7 +69,7 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className="flex md:hidden">
+        <div className="flex md:hidden items-center justify-center">
           <button
             className="text-black outline-none"
             onClick={() => {
@@ -77,7 +79,7 @@ const Navbar = () => {
             {isMenuOpen ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 text-black"
+                className="w-8 h-8 text-black"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -90,7 +92,7 @@ const Navbar = () => {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 text-black"
+                className="w-8 h-8 text-black"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -108,7 +110,7 @@ const Navbar = () => {
       </div>
 
       <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}>
-        <div className="absolute w-full pr-8">
+        <div className="absolute w-full pr-4">
           <div className="flex flex-col items-center bg-white/[0.90] mt-2">
             <Link href="/">
               <img

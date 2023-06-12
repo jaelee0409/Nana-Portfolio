@@ -1,6 +1,6 @@
 export default {
-  name: "art",
-  title: "Art",
+  name: "shop",
+  title: "Shop",
   type: "document",
   fields: [
     {
@@ -13,8 +13,8 @@ export default {
       },
     },
     {
-      name: "project name",
-      title: "Project Name",
+      name: "name",
+      title: "Name",
       type: "string",
     },
     {
@@ -30,6 +30,11 @@ export default {
         source: "name",
         maxLength: 80,
       },
+    },
+    {
+      name: "price",
+      title: "Price",
+      type: "number",
     },
   ],
 };
