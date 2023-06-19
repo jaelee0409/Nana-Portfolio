@@ -22,9 +22,20 @@ export const metadata = {
   description: "",
 };
 
+const hoveredImages = [
+  "/nav_hover_1_NANA_2.png",
+  "/nav_hover_2_ART.png",
+  "/nav_hover_3_SKETCH.png",
+  "/nav_hover_4_ABOUT.png",
+  "/nav_hover_5_SHOP.png",
+];
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${roboto_flex.variable} ${tinos.variable}`}>
+      {hoveredImages.map((image) => {
+        return <link rel="preload" href={image} as="image" />;
+      })}
       <meta name="google" content="notranslate"></meta>
       <body className="flex flex-col h-full md:max-w-7xl md:mx-auto p-2 md:p-16">
         <Navbar />

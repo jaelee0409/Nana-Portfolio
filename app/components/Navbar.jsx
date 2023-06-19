@@ -3,21 +3,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
-const hoveredImages = [
-  "/nav_hover_1_NANA_2.png",
-  "/nav_hover_2_ART.png",
-  "/nav_hover_3_SKETCH.png",
-  "/nav_hover_4_ABOUT.png",
-  "/nav_hover_5_SHOP.png",
-];
-
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-
-  // preload images
-  for (const image of hoveredImages) {
-    const imageElement = <img src={image} alt="Image" />;
-  }
 
   return (
     <nav className="md:max-w-xl md:mx-auto mb-2 md:mb-16">
