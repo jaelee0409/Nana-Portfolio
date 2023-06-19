@@ -12,8 +12,8 @@ export default {
       },
     },
     {
-      name: "name",
-      title: "Name",
+      name: "projectName",
+      title: "Project Name",
       type: "string",
     },
     {
