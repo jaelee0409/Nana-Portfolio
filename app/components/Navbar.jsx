@@ -112,7 +112,7 @@ const Navbar = () => {
       </div>
 
       <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}>
-        <div className="absolute w-full pr-4">
+        <div className="absolute w-full pr-4 z-10">
           <div className="flex flex-col items-center bg-white/[0.90] mt-2">
             <Link href="/">
               <img
