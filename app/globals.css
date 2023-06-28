@@ -2,23 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 255, 255, 255;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 255, 255, 255;
-    --background-end-rgb: 255, 255, 255;
+@layer base {
+  html {
+    overflow-y: scroll;
   }
-}
 
-.masonry-grid {
-  display: -webkit-box; /* Not Needed If  Autoprefixing */
-  display: -ms-flexbox; /* Not Needed If Autoprefixing */
-  display: flex;
-  width: auto;
+  .masonry-grid {
+    display: -webkit-box; /* Not Needed If  Autoprefixing */
+    display: -ms-flexbox; /* Not Needed If Autoprefixing */
+    display: flex;
+    width: auto;
+  }
 }

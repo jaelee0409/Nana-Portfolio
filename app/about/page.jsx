@@ -1,20 +1,19 @@
-import React from "react";
+import Image from "next/image";
 
 const AboutPage = () => {
   return (
-    <div className="lg:flex lg:flex-grow h-max justify-between">
-      <div className="lg:w-1/2 mb-4 lg:mr-4 lg:mb-0">
-        <img
+    <div className="flex flex-col lg:flex-row lg:flex-grow h-max justify-between">
+      <div className="flex justify-center lg:w-1/2 mb-4 lg:mr-4 lg:mb-0">
+        <Image
           src="/profile_pic.jpg"
           alt="Profile Picture"
-          className="w-full h-full"
+          width={669}
+          height={729}
         />
       </div>
       <div className="lg:w-1/2 m-1 lg:pl-8">
-        <h1 className="font-medium text-primary md:text-xl my-2 lg:my-0 lg:mb-4">
-          HELLO!
-        </h1>
-        <div className="font-tinos text-primary md:text-base space-y-2 md:space-y-4">
+        <h1 className="font-medium md:text-xl my-2 lg:my-0 lg:mb-4">HELLO!</h1>
+        <div className="font-tinos text-base space-y-2 md:space-y-4">
           <p className="leading-relaxed md:leading-loose">
             I’m Nana, a designer, illustrator, and artist living in New York
             City. I have been working as a textile and dinnerware designer at

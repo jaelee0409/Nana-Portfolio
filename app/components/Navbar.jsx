@@ -1,73 +1,106 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [hovered1, setHovered1] = useState(false);
+  const [hovered2, setHovered2] = useState(false);
+  const [hovered3, setHovered3] = useState(false);
+  const [hovered4, setHovered4] = useState(false);
+  const [hovered5, setHovered5] = useState(false);
 
   return (
-    <nav className="mb-2 md:mb-16">
+    <div className="mb-2 md:mb-16">
       <div className="flex content-center justify-between">
         <div className="flex items-center">
           <div className="flex flex-start items-center">
-            <Link href="/">
-              <img
-                src="/nav_1_NANA.png"
-                alt="Nana An"
-                className="w-32 md:w-full md:pr-6"
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = "/nav_hover_1_NANA.png")
-                }
-                onMouseOut={(e) => (e.currentTarget.src = "/nav_1_NANA.png")}
+            <Link href="/" className="w-32 md:w-full md:pr-6">
+              <div
+                onMouseOver={(e) => setHovered1(true)}
+                onMouseOut={(e) => setHovered1(false)}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
-                width={256}
-                height={97}
-              />
+              >
+                <Image
+                  src={hovered1 ? "/nav_hover_1_NANA.png" : "/nav_1_NANA.png"}
+                  alt="Nana An"
+                  width={658}
+                  height={250}
+                  priority={true}
+                />
+              </div>
             </Link>
           </div>
           <div className="hidden md:flex flex-end items-center md:ml-36 lg:ml-96">
             <Link href="/" className="mr-4">
-              <img
-                src="/nav_2_ART.png"
-                alt="Art"
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = "/nav_hover_2_ART.png")
-                }
-                onMouseOut={(e) => (e.currentTarget.src = "/nav_2_ART.png")}
-              />
+              <div
+                onMouseOver={(e) => setHovered2(true)}
+                onMouseOut={(e) => setHovered2(false)}
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+              >
+                <Image
+                  src={hovered2 ? "/nav_hover_2_ART.png" : "/nav_2_ART.png"}
+                  alt="Art"
+                  width={375}
+                  height={250}
+                />
+              </div>
             </Link>
             <Link href="/sketchbook" className="md:mr-4 lg:mr-5">
-              <img
-                src="/nav_3_SKETCH.png"
-                alt="Sketchbook"
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = "/nav_hover_3_SKETCH.png")
-                }
-                onMouseOut={(e) => (e.currentTarget.src = "/nav_3_SKETCH.png")}
-              />
+              <div
+                onMouseOver={(e) => setHovered3(true)}
+                onMouseOut={(e) => setHovered3(false)}
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+              >
+                <Image
+                  src={
+                    hovered3 ? "/nav_hover_3_SKETCH.png" : "/nav_3_SKETCH.png"
+                  }
+                  alt="Sketchbook"
+                  width={782}
+                  height={250}
+                />
+              </div>
             </Link>
             <Link href="/about" className="md:mr-6 lg:mr-8">
-              <img
-                src="/nav_4_ABOUT.png"
-                alt="About"
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = "/nav_hover_4_ABOUT.png")
-                }
-                onMouseOut={(e) => (e.currentTarget.src = "/nav_4_ABOUT.png")}
-              />
+              <div
+                onMouseOver={(e) => setHovered4(true)}
+                onMouseOut={(e) => setHovered4(false)}
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+              >
+                <Image
+                  src={hovered4 ? "/nav_hover_4_ABOUT.png" : "/nav_4_ABOUT.png"}
+                  alt="About"
+                  width={436}
+                  height={250}
+                />
+              </div>
             </Link>
             <Link href="/shop" className="mr-2">
-              <img
-                src="/nav_5_SHOP.png"
-                alt="Shop"
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = "/nav_hover_5_SHOP.png")
-                }
-                onMouseOut={(e) => (e.currentTarget.src = "/nav_5_SHOP.png")}
-              />
+              <div
+                onMouseOver={(e) => setHovered5(true)}
+                onMouseOut={(e) => setHovered5(false)}
+                onClick={() => {
+                  setMenuOpen(false);
+                }}
+              >
+                <Image
+                  src={hovered5 ? "/nav_hover_5_SHOP.png" : "/nav_5_SHOP.png"}
+                  alt="Shop"
+                  width={324}
+                  height={250}
+                />
+              </div>
             </Link>
           </div>
         </div>
@@ -115,65 +148,79 @@ const Navbar = () => {
         <div className="absolute w-full pr-4 z-10">
           <div className="flex flex-col items-center bg-white/[0.90] mt-2">
             <Link href="/">
-              <img
-                src="/nav_2_ART.png"
-                alt="Art"
-                className="h-10"
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = "/nav_hover_2_ART.png")
-                }
-                onMouseOut={(e) => (e.currentTarget.src = "/nav_2_ART.png")}
+              <div
+                onMouseOver={(e) => setHovered2(true)}
+                onMouseOut={(e) => setHovered2(false)}
                 onClick={() => {
-                  setMenuOpen(!isMenuOpen);
+                  setMenuOpen(false);
                 }}
-              />
+              >
+                <Image
+                  className="w-auto h-10"
+                  src={hovered2 ? "/nav_hover_2_ART.png" : "/nav_2_ART.png"}
+                  alt="Art"
+                  width={658}
+                  height={250}
+                />
+              </div>
             </Link>
             <Link href="/sketchbook">
-              <img
-                src="/nav_3_SKETCH.png"
-                alt="Sketchbook"
-                className="h-10"
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = "/nav_hover_3_SKETCH.png")
-                }
-                onMouseOut={(e) => (e.currentTarget.src = "/nav_3_SKETCH.png")}
+              <div
+                onMouseOver={(e) => setHovered3(true)}
+                onMouseOut={(e) => setHovered3(false)}
                 onClick={() => {
-                  setMenuOpen(!isMenuOpen);
+                  setMenuOpen(false);
                 }}
-              />
+              >
+                <Image
+                  className="w-auto h-10"
+                  src={
+                    hovered3 ? "/nav_hover_3_SKETCH.png" : "/nav_3_SKETCH.png"
+                  }
+                  alt="Sketchbook"
+                  width={782}
+                  height={250}
+                />
+              </div>
             </Link>
             <Link href="/about">
-              <img
-                src="/nav_4_ABOUT.png"
-                alt="About"
-                className="h-10"
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = "/nav_hover_4_ABOUT.png")
-                }
-                onMouseOut={(e) => (e.currentTarget.src = "/nav_4_ABOUT.png")}
+              <div
+                onMouseOver={(e) => setHovered4(true)}
+                onMouseOut={(e) => setHovered4(false)}
                 onClick={() => {
-                  setMenuOpen(!isMenuOpen);
+                  setMenuOpen(false);
                 }}
-              />
+              >
+                <Image
+                  className="w-auto h-10"
+                  src={hovered4 ? "/nav_hover_4_ABOUT.png" : "/nav_4_ABOUT.png"}
+                  alt="About"
+                  width={436}
+                  height={250}
+                />
+              </div>
             </Link>
             <Link href="/shop">
-              <img
-                src="/nav_5_SHOP.png"
-                alt="Shop"
-                className="h-10"
-                onMouseOver={(e) =>
-                  (e.currentTarget.src = "/nav_hover_5_SHOP.png")
-                }
-                onMouseOut={(e) => (e.currentTarget.src = "/nav_5_SHOP.png")}
+              <div
+                onMouseOver={(e) => setHovered5(true)}
+                onMouseOut={(e) => setHovered5(false)}
                 onClick={() => {
-                  setMenuOpen(!isMenuOpen);
+                  setMenuOpen(false);
                 }}
-              />
+              >
+                <Image
+                  className="w-auto h-10"
+                  src={hovered5 ? "/nav_hover_5_SHOP.png" : "/nav_5_SHOP.png"}
+                  alt="Shop"
+                  width={324}
+                  height={250}
+                />
+              </div>
             </Link>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 

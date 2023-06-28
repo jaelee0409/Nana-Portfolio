@@ -19,25 +19,15 @@ const tinos = Tinos({
 
 export const metadata = {
   title: "Nana An",
-  description: "",
+  description:
+    "Welcome to the art portfolio website of Nana An. Embark on a visual journey of boundless imagination and artistic brilliance.",
 };
-
-const hoveredImages = [
-  "/nav_hover_1_NANA.png",
-  "/nav_hover_2_ART.png",
-  "/nav_hover_3_SKETCH.png",
-  "/nav_hover_4_ABOUT.png",
-  "/nav_hover_5_SHOP.png",
-];
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${roboto_flex.variable} ${tinos.variable}`}>
-      {hoveredImages.map((image) => {
-        return <link rel="preload" href={image} as="image" key={image} />;
-      })}
       <meta name="google" content="notranslate"></meta>
-      <body className="flex flex-col h-full md:max-w-7xl md:mx-auto p-2 md:p-16">
+      <body className="h-full bg-white md:max-w-7xl md:mx-auto p-2 md:p-16">
         <Navbar />
         <div className="flex-grow">{children}</div>
         <Footer />
