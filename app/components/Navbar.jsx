@@ -158,7 +158,7 @@ const Navbar = () => {
                   className="w-auto h-10"
                   src={hovered2 ? "/nav_hover_2_ART.png" : "/nav_2_ART.png"}
                   alt="Art"
-                  width={658}
+                  width={375}
                   height={250}
                 />
               </div>
