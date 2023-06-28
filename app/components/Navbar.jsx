@@ -30,7 +30,6 @@ const Navbar = () => {
                   alt="Nana An"
                   width={658}
                   height={250}
-                  priority={true}
                 />
               </div>
             </Link>
