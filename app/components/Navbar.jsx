@@ -7,19 +7,19 @@ const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="md:max-w-xl md:mx-auto mb-2 md:mb-16">
+    <nav className="mb-2 md:mb-16">
       <div className="flex content-center justify-between">
         <div className="flex items-center">
           <div className="flex flex-start items-center">
             <Link href="/">
               <img
-                src="/nav_1_NANA_2.png"
+                src="/nav_1_NANA.png"
                 alt="Nana An"
-                className="min-w-32 w-32 md:w-full"
+                className="w-32 md:w-full md:pr-6"
                 onMouseOver={(e) =>
-                  (e.currentTarget.src = "/nav_hover_1_NANA_2.png")
+                  (e.currentTarget.src = "/nav_hover_1_NANA.png")
                 }
-                onMouseOut={(e) => (e.currentTarget.src = "/nav_1_NANA_2.png")}
+                onMouseOut={(e) => (e.currentTarget.src = "/nav_1_NANA.png")}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
@@ -28,8 +28,8 @@ const Navbar = () => {
               />
             </Link>
           </div>
-          <div className="hidden md:flex flex-end items-center ml-24 space-x-2">
-            <Link href="/">
+          <div className="hidden md:flex flex-end items-center md:ml-36 lg:ml-96">
+            <Link href="/" className="mr-4">
               <img
                 src="/nav_2_ART.png"
                 alt="Art"
@@ -39,7 +39,7 @@ const Navbar = () => {
                 onMouseOut={(e) => (e.currentTarget.src = "/nav_2_ART.png")}
               />
             </Link>
-            <Link href="/sketchbook">
+            <Link href="/sketchbook" className="md:mr-4 lg:mr-5">
               <img
                 src="/nav_3_SKETCH.png"
                 alt="Sketchbook"
@@ -49,7 +49,7 @@ const Navbar = () => {
                 onMouseOut={(e) => (e.currentTarget.src = "/nav_3_SKETCH.png")}
               />
             </Link>
-            <Link href="/about">
+            <Link href="/about" className="md:mr-6 lg:mr-8">
               <img
                 src="/nav_4_ABOUT.png"
                 alt="About"
@@ -59,7 +59,7 @@ const Navbar = () => {
                 onMouseOut={(e) => (e.currentTarget.src = "/nav_4_ABOUT.png")}
               />
             </Link>
-            <Link href="/shop">
+            <Link href="/shop" className="mr-2">
               <img
                 src="/nav_5_SHOP.png"
                 alt="Shop"

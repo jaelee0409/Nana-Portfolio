@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${roboto_flex.variable} ${tinos.variable}`}>
       {hoveredImages.map((image) => {
-        return <link rel="preload" href={image} as="image" />;
+        return <link rel="preload" href={image} as="image" key={image} />;
       })}
       <meta name="google" content="notranslate"></meta>
       <body className="flex flex-col h-full md:max-w-7xl md:mx-auto p-2 md:p-16">
