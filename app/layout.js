@@ -23,7 +23,7 @@ export const metadata = {
 };
 
 const hoveredImages = [
-  "/nav_hover_1_NANA_2.png",
+  "/nav_hover_1_NANA.png",
   "/nav_hover_2_ART.png",
   "/nav_hover_3_SKETCH.png",
   "/nav_hover_4_ABOUT.png",
