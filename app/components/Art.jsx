@@ -16,10 +16,10 @@ const Art = ({ data }) => {
 
   return (
     <>
-      <div className="relative group cursor-pointer mb-3 md:mb-5">
-        <Link href={`/${folderName}/${data.slug.current}`} data={data}>
+      <div className="relative group cursor-pointer mb-3 md:mb-5 lg:mb-7">
+        <Link href={`/${folderName}/${data.slug.current}`}>
           <Image
-            className="group-hover:opacity-30"
+            className="group-hover:opacity-25"
             src={mainImageUrl}
             alt={mainImageUrl}
             width={500}

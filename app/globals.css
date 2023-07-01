@@ -1,16 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  html {
-    overflow-y: scroll;
-  }
-
-  .masonry-grid {
-    display: -webkit-box; /* Not Needed If  Autoprefixing */
-    display: -ms-flexbox; /* Not Needed If Autoprefixing */
-    display: flex;
-    width: auto;
-  }
-}

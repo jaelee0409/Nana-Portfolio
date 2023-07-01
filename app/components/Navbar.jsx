@@ -2,7 +2,18 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import NextImage from "next/image";
+
+import MenuNanaAnHovered from "../../public/nav_hover_1_NANA.png";
+import MenuNanaAn from "../../public/nav_1_NANA.png";
+import MenuArtHovered from "../../public/nav_hover_2_ART.png";
+import MenuArt from "../../public/nav_2_ART.png";
+import MenuSketchbookHovered from "../../public/nav_hover_3_SKETCH.png";
+import MenuSketchbook from "../../public/nav_3_SKETCH.png";
+import MenuAboutHovered from "../../public/nav_hover_4_ABOUT.png";
+import MenuAbout from "../../public/nav_4_ABOUT.png";
+import MenuShopHovered from "../../public/nav_hover_5_SHOP.png";
+import MenuShop from "../../public/nav_5_SHOP.png";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -13,22 +24,22 @@ const Navbar = () => {
   const [hovered5, setHovered5] = useState(false);
 
   return (
-    <div className="mb-2 md:mb-16">
+    <nav className="mb-2 md:mb-16">
       <div className="flex content-center justify-between">
         <div className="flex items-center">
           <div className="flex flex-start items-center">
             <Link href="/" className="w-32 md:w-full md:pr-6">
               <div
                 onMouseOver={(e) => setHovered1(true)}
-                onMouseOut={(e) => setHovered1(false)}
+                onMouseLeave={(e) => setHovered1(false)}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
               >
-                <Image
+                <NextImage
                   src={hovered1 ? "/nav_hover_1_NANA.png" : "/nav_1_NANA.png"}
                   alt="Nana An"
-                  width={658}
+                  width={750}
                   height={250}
                 />
               </div>
@@ -38,66 +49,56 @@ const Navbar = () => {
             <Link href="/" className="mr-4">
               <div
                 onMouseOver={(e) => setHovered2(true)}
-                onMouseOut={(e) => setHovered2(false)}
+                onMouseLeave={(e) => setHovered2(false)}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
               >
-                <Image
-                  src={hovered2 ? "/nav_hover_2_ART.png" : "/nav_2_ART.png"}
+                <NextImage
+                  src={hovered2 ? MenuArtHovered : MenuArt}
                   alt="Art"
-                  width={375}
-                  height={250}
                 />
               </div>
             </Link>
             <Link href="/sketchbook" className="md:mr-4 lg:mr-5">
               <div
                 onMouseOver={(e) => setHovered3(true)}
-                onMouseOut={(e) => setHovered3(false)}
+                onMouseLeave={(e) => setHovered3(false)}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
               >
-                <Image
-                  src={
-                    hovered3 ? "/nav_hover_3_SKETCH.png" : "/nav_3_SKETCH.png"
-                  }
+                <NextImage
+                  src={hovered3 ? MenuSketchbookHovered : MenuSketchbook}
                   alt="Sketchbook"
-                  width={782}
-                  height={250}
                 />
               </div>
             </Link>
             <Link href="/about" className="md:mr-6 lg:mr-8">
               <div
                 onMouseOver={(e) => setHovered4(true)}
-                onMouseOut={(e) => setHovered4(false)}
+                onMouseLeave={(e) => setHovered4(false)}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
               >
-                <Image
-                  src={hovered4 ? "/nav_hover_4_ABOUT.png" : "/nav_4_ABOUT.png"}
+                <NextImage
+                  src={hovered4 ? MenuAboutHovered : MenuAbout}
                   alt="About"
-                  width={436}
-                  height={250}
                 />
               </div>
             </Link>
             <Link href="/shop" className="mr-2">
               <div
                 onMouseOver={(e) => setHovered5(true)}
-                onMouseOut={(e) => setHovered5(false)}
+                onMouseLeave={(e) => setHovered5(false)}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
               >
-                <Image
-                  src={hovered5 ? "/nav_hover_5_SHOP.png" : "/nav_5_SHOP.png"}
+                <NextImage
+                  src={hovered5 ? MenuShopHovered : MenuShop}
                   alt="Shop"
-                  width={324}
-                  height={250}
                 />
               </div>
             </Link>
@@ -149,77 +150,67 @@ const Navbar = () => {
             <Link href="/">
               <div
                 onMouseOver={(e) => setHovered2(true)}
-                onMouseOut={(e) => setHovered2(false)}
+                onMouseLeave={(e) => setHovered2(false)}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
               >
-                <Image
+                <NextImage
                   className="w-auto h-10"
-                  src={hovered2 ? "/nav_hover_2_ART.png" : "/nav_2_ART.png"}
+                  src={hovered2 ? MenuArtHovered : MenuArt}
                   alt="Art"
-                  width={375}
-                  height={250}
                 />
               </div>
             </Link>
             <Link href="/sketchbook">
               <div
                 onMouseOver={(e) => setHovered3(true)}
-                onMouseOut={(e) => setHovered3(false)}
+                onMouseLeave={(e) => setHovered3(false)}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
               >
-                <Image
+                <NextImage
                   className="w-auto h-10"
-                  src={
-                    hovered3 ? "/nav_hover_3_SKETCH.png" : "/nav_3_SKETCH.png"
-                  }
+                  src={hovered3 ? MenuSketchbookHovered : MenuSketchbook}
                   alt="Sketchbook"
-                  width={782}
-                  height={250}
                 />
               </div>
             </Link>
             <Link href="/about">
               <div
                 onMouseOver={(e) => setHovered4(true)}
-                onMouseOut={(e) => setHovered4(false)}
+                onMouseLeave={(e) => setHovered4(false)}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
               >
-                <Image
+                <NextImage
                   className="w-auto h-10"
-                  src={hovered4 ? "/nav_hover_4_ABOUT.png" : "/nav_4_ABOUT.png"}
+                  src={hovered4 ? MenuAboutHovered : MenuAbout}
                   alt="About"
-                  width={436}
-                  height={250}
                 />
               </div>
             </Link>
             <Link href="/shop">
               <div
                 onMouseOver={(e) => setHovered5(true)}
-                onMouseOut={(e) => setHovered5(false)}
+                onMouseLeave={(e) => setHovered5(false)}
                 onClick={() => {
                   setMenuOpen(false);
                 }}
               >
-                <Image
+                <NextImage
                   className="w-auto h-10"
-                  src={hovered5 ? "/nav_hover_5_SHOP.png" : "/nav_5_SHOP.png"}
+                  src={hovered5 ? MenuShopHovered : MenuShop}
                   alt="Shop"
-                  width={324}
-                  height={250}
                 />
               </div>
             </Link>
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

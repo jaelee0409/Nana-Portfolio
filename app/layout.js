@@ -25,11 +25,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${roboto_flex.variable} ${tinos.variable}`}>
+    <html
+      lang="en"
+      className={`${roboto_flex.variable} ${tinos.variable} overflow-y-scroll`}
+    >
       <meta name="google" content="notranslate"></meta>
       <body className="h-full bg-white md:max-w-7xl md:mx-auto p-2 md:p-16">
         <Navbar />
-        <div className="flex-grow">{children}</div>
+        <main className="flex-grow">{children}</main>
         <Footer />
       </body>
     </html>

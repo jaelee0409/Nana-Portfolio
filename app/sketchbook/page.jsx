@@ -1,14 +1,9 @@
-import { client } from "../../sanity/lib/client";
 import MasonryLayout from "../components/MasonryLayout";
 
+import { getSketchbookProjects } from "../api/data";
+
 export default async function SketchbookPage() {
-  const query = '*[_type == "sketchbook"]';
-  let sketchProjects;
-  try {
-    sketchProjects = await client.fetch(query);
-  } catch (error) {
-    console.log("Data failed to fetch", error);
-  }
+  const sketchProjects = await getSketchbookProjects();
 
   return (
     <>
