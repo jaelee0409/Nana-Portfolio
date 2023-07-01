@@ -4,16 +4,16 @@ import { useState } from "react";
 import Link from "next/link";
 import NextImage from "next/image";
 
-import MenuNanaAnHovered from "../../public/nav_hover_1_NANA.png";
-import MenuNanaAn from "../../public/nav_1_NANA.png";
-import MenuArtHovered from "../../public/nav_hover_2_ART.png";
-import MenuArt from "../../public/nav_2_ART.png";
-import MenuSketchbookHovered from "../../public/nav_hover_3_SKETCH.png";
-import MenuSketchbook from "../../public/nav_3_SKETCH.png";
-import MenuAboutHovered from "../../public/nav_hover_4_ABOUT.png";
-import MenuAbout from "../../public/nav_4_ABOUT.png";
-import MenuShopHovered from "../../public/nav_hover_5_SHOP.png";
-import MenuShop from "../../public/nav_5_SHOP.png";
+import MenuNanaAnHovered from "../../public/nav_hover_1_NANA-min.png";
+import MenuNanaAn from "../../public/nav_1_NANA-min.png";
+import MenuArtHovered from "../../public/nav_hover_2_ART-min.png";
+import MenuArt from "../../public/nav_2_ART-min.png";
+import MenuSketchbookHovered from "../../public/nav_hover_3_SKETCH-min.png";
+import MenuSketchbook from "../../public/nav_3_SKETCH-min.png";
+import MenuAboutHovered from "../../public/nav_hover_4_ABOUT-min.png";
+import MenuAbout from "../../public/nav_4_ABOUT-min.png";
+import MenuShopHovered from "../../public/nav_hover_5_SHOP-min.png";
+import MenuShop from "../../public/nav_5_SHOP-min.png";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="flex content-center justify-between">
         <div className="flex items-center">
           <div className="flex flex-start items-center">
-            <Link href="/" className="w-32 md:w-full md:pr-6">
+            <Link href="/" className="w-32 md:w-full md:mr-6">
               <div
                 onMouseOver={(e) => setHovered1(true)}
                 onMouseLeave={(e) => setHovered1(false)}
@@ -37,10 +37,8 @@ const Navbar = () => {
                 }}
               >
                 <NextImage
-                  src={hovered1 ? "/nav_hover_1_NANA.png" : "/nav_1_NANA.png"}
+                  src={hovered1 ? MenuNanaAnHovered : MenuNanaAn}
                   alt="Nana An"
-                  width={750}
-                  height={250}
                 />
               </div>
             </Link>
