@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import NextImage from "next/image";
 
@@ -16,15 +16,32 @@ import MenuShopHovered from "../../public/nav_hover_5_SHOP-min.png";
 import MenuShop from "../../public/nav_5_SHOP-min.png";
 
 const Navbar = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [hovered1, setHovered1] = useState(false);
   const [hovered2, setHovered2] = useState(false);
   const [hovered3, setHovered3] = useState(false);
   const [hovered4, setHovered4] = useState(false);
   const [hovered5, setHovered5] = useState(false);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleClickOutsideMenu = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target))
+      setIsMenuOpen(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutsideMenu);
+    return () => {
+      document.addEventListener("mousedown", handleClickOutsideMenu);
+    };
+  }, []);
+
   return (
-    <nav className="mb-2 md:mb-16">
+    <nav className="mb-2 md:mb-16" ref={menuRef}>
       <div className="flex content-center justify-between">
         <div className="flex items-center">
           <div className="flex flex-start items-center">
@@ -32,8 +49,12 @@ const Navbar = () => {
               <div
                 onMouseOver={(e) => setHovered1(true)}
                 onMouseLeave={(e) => setHovered1(false)}
+                onTouchEnd={(e) => {
+                  setHovered1(false);
+                  setIsMenuOpen(false);
+                }}
                 onClick={() => {
-                  setMenuOpen(false);
+                  setIsMenuOpen(false);
                 }}
               >
                 <NextImage
@@ -49,7 +70,7 @@ const Navbar = () => {
                 onMouseOver={(e) => setHovered2(true)}
                 onMouseLeave={(e) => setHovered2(false)}
                 onClick={() => {
-                  setMenuOpen(false);
+                  setIsMenuOpen(false);
                 }}
               >
                 <NextImage
@@ -63,7 +84,7 @@ const Navbar = () => {
                 onMouseOver={(e) => setHovered3(true)}
                 onMouseLeave={(e) => setHovered3(false)}
                 onClick={() => {
-                  setMenuOpen(false);
+                  setIsMenuOpen(false);
                 }}
               >
                 <NextImage
@@ -77,7 +98,7 @@ const Navbar = () => {
                 onMouseOver={(e) => setHovered4(true)}
                 onMouseLeave={(e) => setHovered4(false)}
                 onClick={() => {
-                  setMenuOpen(false);
+                  setIsMenuOpen(false);
                 }}
               >
                 <NextImage
@@ -91,7 +112,7 @@ const Navbar = () => {
                 onMouseOver={(e) => setHovered5(true)}
                 onMouseLeave={(e) => setHovered5(false)}
                 onClick={() => {
-                  setMenuOpen(false);
+                  setIsMenuOpen(false);
                 }}
               >
                 <NextImage
@@ -106,7 +127,7 @@ const Navbar = () => {
           <button
             className="text-black outline-none"
             onClick={() => {
-              setMenuOpen(!isMenuOpen);
+              toggleMenu();
             }}
           >
             {isMenuOpen ? (
@@ -150,7 +171,7 @@ const Navbar = () => {
                 onMouseOver={(e) => setHovered2(true)}
                 onMouseLeave={(e) => setHovered2(false)}
                 onClick={() => {
-                  setMenuOpen(false);
+                  setIsMenuOpen(false);
                 }}
               >
                 <NextImage
@@ -165,7 +186,7 @@ const Navbar = () => {
                 onMouseOver={(e) => setHovered3(true)}
                 onMouseLeave={(e) => setHovered3(false)}
                 onClick={() => {
-                  setMenuOpen(false);
+                  setIsMenuOpen(false);
                 }}
               >
                 <NextImage
@@ -180,7 +201,7 @@ const Navbar = () => {
                 onMouseOver={(e) => setHovered4(true)}
                 onMouseLeave={(e) => setHovered4(false)}
                 onClick={() => {
-                  setMenuOpen(false);
+                  setIsMenuOpen(false);
                 }}
               >
                 <NextImage
@@ -195,7 +216,7 @@ const Navbar = () => {
                 onMouseOver={(e) => setHovered5(true)}
                 onMouseLeave={(e) => setHovered5(false)}
                 onClick={() => {
-                  setMenuOpen(false);
+                  setIsMenuOpen(false);
                 }}
               >
                 <NextImage

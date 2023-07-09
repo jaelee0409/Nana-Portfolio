@@ -37,10 +37,10 @@ export async function getSketchbookProjects() {
 }
 
 export async function getSketchbookProjectDetails(slug) {
-  const query = '*[_type == "sketchbook"]';
+  const query = '*[_type == "sketchbook" && slug.current == $slug]';
   let sketchProjects;
   try {
-    sketchProjects = await client.fetch(query);
+    sketchProjects = await client.fetch(query, { slug });
   } catch (error) {
     console.log("Data failed to fetch", error);
   }
