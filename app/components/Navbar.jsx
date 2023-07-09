@@ -54,6 +54,7 @@ const Navbar = () => {
                   setIsMenuOpen(false);
                 }}
                 onClick={() => {
+                  setHovered1(false);
                   setIsMenuOpen(false);
                 }}
               >
