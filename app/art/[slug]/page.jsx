@@ -18,7 +18,7 @@ const page = async ({ params }) => {
       {images?.map((image) => {
         const url = urlForImage(image.asset._ref).toString();
         return (
-          <div>
+          <div key={url}>
             <Image
               className="mx-auto py-8"
               src={url}

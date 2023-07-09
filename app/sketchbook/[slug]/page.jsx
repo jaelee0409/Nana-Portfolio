@@ -7,7 +7,6 @@ const page = async ({ params }) => {
   const project = await getSketchbookProjectDetails(params.slug);
   const image = project[0].image;
   const url = urlForImage(image.asset._ref).toString();
-  console.log(url);
 
   return (
     <>
