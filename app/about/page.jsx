@@ -12,8 +12,10 @@ const AboutPage = () => {
         />
       </div>
       <div className="lg:w-1/2 m-1 lg:pl-8">
-        <h1 className="font-medium md:text-xl my-2 lg:my-0 lg:mb-4">HELLO!</h1>
-        <div className="font-tinos text-base space-y-2 md:space-y-4">
+        <h1 className="font-medium md:text-xl tracking-[.2em] my-2 lg:my-0 lg:mb-4">
+          HELLO!
+        </h1>
+        <div className="font-tinos space-y-2 md:space-y-4">
           <p className="leading-relaxed md:leading-loose">
             I’m Nana, a designer, illustrator, and artist living in New York
             City. I have been working as a textile and dinnerware designer at

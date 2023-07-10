@@ -1,3 +1,5 @@
+import { client } from "./lib/client";
+
 export default {
   name: "art",
   title: "Art",
@@ -27,8 +29,19 @@ export default {
       title: "Slug",
       type: "slug",
       options: {
-        source: "name",
+        source: "projectName",
         maxLength: 80,
+      },
+    },
+    {
+      name: "id",
+      type: "number",
+      hidden: true,
+      readOnly: true,
+      initialValue: async () => {
+        const query = 'count(*[_type == "art"])';
+        const result = await client.fetch(query);
+        return result + 1;
       },
     },
   ],

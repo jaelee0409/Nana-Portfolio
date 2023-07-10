@@ -26,7 +26,7 @@ export default {
       title: "Slug",
       type: "slug",
       options: {
-        source: "name",
+        source: "projectName",
         maxLength: 80,
       },
     },

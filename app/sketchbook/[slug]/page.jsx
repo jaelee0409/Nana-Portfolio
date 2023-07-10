@@ -10,7 +10,7 @@ const page = async ({ params }) => {
 
   return (
     <>
-      <div className="text-center text-3xl pb-4">
+      <div className="text-center font-medium md:text-xl tracking-[.2em] pb-4">
         {project[0].projectName.toUpperCase()}
       </div>
       <div className="font-tinos text-center text-lg">
@@ -23,8 +23,9 @@ const page = async ({ params }) => {
           alt={url}
           width={0}
           height={0}
+          quality={100}
           sizes="100vw"
-          style={{ width: "100%", height: "auto" }}
+          style={{ width: "auto", height: "100%" }}
         />
       </div>
     </>
