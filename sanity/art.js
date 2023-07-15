@@ -36,7 +36,6 @@ export default {
     {
       name: "id",
       type: "number",
-      hidden: true,
       readOnly: true,
       initialValue: async () => {
         const query = 'count(*[_type == "art"])';

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { urlForImage } from "../../../sanity/lib/image";
 import { getArtProjectDetails } from "../../api/data";
@@ -6,6 +7,7 @@ import { getArtProjectDetails } from "../../api/data";
 const page = async ({ params }) => {
   const project = await getArtProjectDetails(params.slug);
   const images = project[0].image;
+  const id = project.id;
 
   return (
     <>
@@ -32,6 +34,11 @@ const page = async ({ params }) => {
           </div>
         );
       })}
+      <div>
+        <Link href="/">Previous</Link>
+        <Link href="/">Projects</Link>
+        <Link href="/">Next</Link>
+      </div>
     </>
   );
 };

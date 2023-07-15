@@ -1,3 +1,5 @@
+import { client } from "./lib/client";
+
 export default {
   name: "sketchbook",
   title: "Sketchbook",
@@ -28,6 +30,16 @@ export default {
       options: {
         source: "projectName",
         maxLength: 80,
+      },
+    },
+    {
+      name: "id",
+      type: "number",
+      readOnly: true,
+      initialValue: async () => {
+        const query = 'count(*[_type == "sketchbook"])';
+        const result = await client.fetch(query);
+        return result + 1;
       },
     },
   ],
