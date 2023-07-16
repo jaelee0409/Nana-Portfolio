@@ -25,7 +25,7 @@ const Art = ({ data }) => {
             width={500}
             height={500}
           />
-          <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 flex justify-center items-center text-center tracking-[.2em] text-black">
+          <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 flex justify-center items-center text-center tracking-[.2em] text-sm md:text-base text-black">
             {data.projectName.toUpperCase()}
           </div>
         </Link>

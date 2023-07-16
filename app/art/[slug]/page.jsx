@@ -11,10 +11,10 @@ const page = async ({ params }) => {
 
   return (
     <>
-      <div className="text-center font-medium md:text-xl tracking-[.2em] pb-4">
+      <div className="text-center font-medium md:text-xl tracking-[.2em] mb-2 md:mb-4 mt-4 md:mt-0">
         {project[0].projectName.toUpperCase()}
       </div>
-      <div className="font-tinos text-center text-lg">
+      <div className="font-tinos text-center text-sm md:text-lg mb-4">
         {project[0].description}
       </div>
       {images?.map((image) => {
@@ -22,7 +22,7 @@ const page = async ({ params }) => {
         return (
           <div key={url}>
             <Image
-              className="mx-auto py-8"
+              className="mx-auto py-4 md:py-8"
               src={url}
               alt={url}
               width={0}
@@ -34,10 +34,10 @@ const page = async ({ params }) => {
           </div>
         );
       })}
-      <div>
-        <Link href="/">Previous</Link>
-        <Link href="/">Projects</Link>
-        <Link href="/">Next</Link>
+      <div className="flex flex-row items-center justify-center font-medium text-sm md:text-xl tracking-[.2em] mt-8 space-x-2 space-x-16">
+        <Link href="/">&lArr; PREVIOUS</Link>
+        <Link href="/">&uArr; ART</Link>
+        <Link href="/">NEXT &rArr;</Link>
       </div>
     </>
   );

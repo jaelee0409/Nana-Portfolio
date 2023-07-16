@@ -30,9 +30,11 @@ export default function RootLayout({ children }) {
       className={`${roboto_flex.variable} ${tinos.variable} overflow-y-scroll`}
     >
       <meta name="google" content="notranslate"></meta>
-      <body className="h-full bg-white md:max-w-7xl md:mx-auto p-2 md:p-16">
-        <Navbar />
-        <main className="flex-grow">{children}</main>
+      <body className="flex flex-col min-h-screen bg-white md:max-w-7xl md:mx-auto p-2 md:p-16">
+        <div className="flex-1">
+          <Navbar />
+          <main>{children}</main>
+        </div>
         <Footer />
       </body>
     </html>
