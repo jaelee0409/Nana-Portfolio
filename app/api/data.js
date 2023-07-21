@@ -24,28 +24,32 @@ export async function getArtProjectDetails(slug) {
   return artProjects;
 }
 
-export async function getPreviousArtProjectDetails(id) {
-  const query = '*[_type == "art" && id == $id - 1]';
-  let artProjects;
+export async function getPreviousArtProjectSlug(id) {
+  const query = `*[ _type == "art" && id == $id + 1] {
+    slug,
+}`;
+  let slug;
   try {
-    artProjects = await client.fetch(query, { id });
+    slug = await client.fetch(query, { id });
   } catch (error) {
     console.log("Data failed to fetch", error);
   }
 
-  return artProjects;
+  return slug;
 }
 
-export async function getNextArtProjectDetails(id) {
-  const query = '*[_type == "art" && id == $id + 1]';
-  let artProjects;
+export async function getNextArtProjectSlug(id) {
+  const query = `*[ _type == "art" && id == $id - 1] {
+    slug,
+}`;
+  let slug;
   try {
-    artProjects = await client.fetch(query, { id });
+    slug = await client.fetch(query, { id });
   } catch (error) {
     console.log("Data failed to fetch", error);
   }
 
-  return artProjects;
+  return slug;
 }
 
 export async function getSketchbookProjects() {
@@ -72,26 +76,30 @@ export async function getSketchbookProjectDetails(slug) {
   return sketchProjects;
 }
 
-export async function getPreviousSketchbookProjectDetails(id) {
-  const query = '*[_type == "sketchbook" && id == $id - 1]';
-  let sketchProjects;
+export async function getPreviousSketchbookProjectSlug(id) {
+  const query = `*[ _type == "sketchbook" && id == $id + 1] {
+    slug,
+}`;
+  let slug;
   try {
-    sketchProjects = await client.fetch(query, { id });
+    slug = await client.fetch(query, { id });
   } catch (error) {
     console.log("Data failed to fetch", error);
   }
 
-  return sketchProjects;
+  return slug;
 }
 
-export async function getNextSketchbookProjectDetails(id) {
-  const query = '*[_type == "sketchbook" && id == $id + 1]';
-  let sketchProjects;
+export async function getNextSketchbookProjectSlug(id) {
+  const query = `*[ _type == "sketchbook" && id == $id - 1] {
+    slug,
+}`;
+  let slug;
   try {
-    sketchProjects = await client.fetch(query, { id });
+    slug = await client.fetch(query, { id });
   } catch (error) {
     console.log("Data failed to fetch", error);
   }
 
-  return sketchProjects;
+  return slug;
 }
