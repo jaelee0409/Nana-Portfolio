@@ -1,8 +1,8 @@
 import "./globals.css";
 import { Roboto_Flex, Tinos } from "next/font/google";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import CartProvider from "./components/Providers";
+import Layout from "./components/Layout";
 
 const roboto_flex = Roboto_Flex({
   subsets: ["latin"],
@@ -27,15 +27,14 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${roboto_flex.variable} ${tinos.variable} overflow-y-scroll`}
     >
       <meta name="google" content="notranslate"></meta>
       <body className="flex flex-col min-h-screen bg-white md:max-w-7xl md:mx-auto p-2 md:p-16">
-        <div className="flex-1">
-          <Navbar />
-          <main>{children}</main>
-        </div>
-        <Footer />
+        <CartProvider>
+          <Layout>{children}</Layout>
+        </CartProvider>
       </body>
     </html>
   );

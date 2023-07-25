@@ -103,3 +103,27 @@ export async function getNextSketchbookProjectSlug(id) {
 
   return slug;
 }
+
+export async function getShopProducts() {
+  const query = '*[_type == "shop"]';
+  let products;
+  try {
+    products = await client.fetch(query);
+  } catch (error) {
+    console.log("Data failed to fetch", error);
+  }
+
+  return products;
+}
+
+export async function getShopProductDetails(slug) {
+  const query = '*[_type == "shop" && slug.current == $slug]';
+  let productDetails;
+  try {
+    productDetails = await client.fetch(query, { slug });
+  } catch (error) {
+    console.log("Data failed to fetch", error);
+  }
+
+  return productDetails[0];
+}

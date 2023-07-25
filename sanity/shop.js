@@ -1,11 +1,13 @@
+import { client } from "./lib/client";
+
 export default {
   name: "shop",
   title: "Shop",
   type: "document",
   fields: [
     {
-      name: "image",
-      title: "Image",
+      name: "images",
+      title: "Images",
       type: "array",
       of: [{ type: "image" }],
       options: {
@@ -32,9 +34,30 @@ export default {
       },
     },
     {
+      name: "sku",
+      title: "SKU",
+      type: "string",
+    },
+    {
       name: "price",
       title: "Price",
       type: "number",
+    },
+    {
+      name: "details",
+      title: "Details",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
+      name: "index",
+      type: "number",
+      readOnly: true,
+      initialValue: async () => {
+        const query = 'count(*[_type == "shop"])';
+        const result = await client.fetch(query);
+        return result + 1;
+      },
     },
   ],
 };
