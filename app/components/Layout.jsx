@@ -11,7 +11,7 @@ export default function Layout({ children }) {
     <>
       <Navbar />
       <div className="flex-1">
-        <DebugCart />
+        {/* <DebugCart /> */}
         {children}
       </div>
       <Footer />
