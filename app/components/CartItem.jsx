@@ -38,7 +38,7 @@ export default function CartItem({ item }) {
   };
 
   return (
-    <div className="flex items-center gap-8 py-4">
+    <div className="flex flex-col md:flex-row items-center md:gap-8 md:py-4">
       <Image
         src={urlForImage(item.images[0].asset._ref).toString()}
         alt={urlForImage(item.images[0].asset._ref).toString()}
@@ -46,14 +46,14 @@ export default function CartItem({ item }) {
         height={500}
         className="h-16 w-16 object-cover object-center md:h-32 md:w-32"
       />
-      <div className="justify-center">
+      <div className="justify-center mt-4 md:mt-0">
         <span className="font-tinos">{name.toUpperCase()}</span>
       </div>
-      <div className="font-tinos ml-auto">
+      <div className="font-tinos md:ml-auto mt-2 md:mt-0">
         {formatCurrencyString({ value: price, currency: "USD" })}
       </div>
 
-      <div className="flex items-center">
+      <div className="flex items-center mt-2 md:mt-0">
         <div className="flex border border-black items-center justify-center space-x-2 md:space-x-4 p-1">
           <span
             onClick={() => {
@@ -110,7 +110,7 @@ export default function CartItem({ item }) {
 
       <button
         onClick={removeItemFromCart}
-        className="font-medium text-center w-8 h-8 hover:bg-gray-200 rounded-full transition-colors duration-500"
+        className="font-medium text-center w-8 h-8 hover:bg-gray-200 rounded-full transition-colors duration-500 mt-2 md:mt-0"
       >
         X
       </button>

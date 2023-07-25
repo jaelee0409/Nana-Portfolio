@@ -9,7 +9,7 @@ const ProductGallery = ({ productDetails }) => {
 
   return (
     <div className="flex flex-col">
-      <div className="items-center my-4 md:my-8">
+      <div className="items-center mb-4 md:mb-8">
         <Image
           className="border border-black mx-auto"
           src={urlForImage(

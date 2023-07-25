@@ -10,7 +10,7 @@ const ShopPage = async () => {
   const products = await getShopProducts();
 
   return (
-    <div className="grid grid-cols-3 gap-3">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
       {products.map((product) => {
         const mainImageUrl = urlForImage(
           product.images[0].asset._ref
@@ -34,9 +34,9 @@ const ShopPage = async () => {
                 )}`}
               />
               <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 flex justify-center items-center text-center tracking-[.2em] text-sm md:text-base text-black">
-                <div className="flex flex-col divide-y-2 divide-solid divide-black">
-                  <div>{product.name.toUpperCase()}</div>
-                  <div>
+                <div className="flex flex-col divide-y md:divide-y-2 divide-solid divide-black px-4">
+                  <div className="mb-1">{product.name.toUpperCase()}</div>
+                  <div className="pt-1">
                     <FormattedPrice price={product.price} />
                   </div>
                 </div>

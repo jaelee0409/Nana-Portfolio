@@ -4,8 +4,6 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import NextImage from "next/image";
 
-import { useShoppingCart } from "use-shopping-cart";
-
 import MenuNanaAnHovered from "../../public/nav_hover_1_NANA-min.png";
 import MenuNanaAn from "../../public/nav_1_NANA-min.png";
 import MenuArtHovered from "../../public/nav_hover_2_ART-min.png";
@@ -25,8 +23,6 @@ const Navbar = () => {
   const [hovered3, setHovered3] = useState(false);
   const [hovered4, setHovered4] = useState(false);
   const [hovered5, setHovered5] = useState(false);
-
-  const { cartCount } = useShoppingCart();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

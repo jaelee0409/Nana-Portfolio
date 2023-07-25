@@ -1,11 +1,6 @@
 "use client";
 
 import { useShoppingCart } from "use-shopping-cart";
-import { loadStripe } from "@stripe/stripe-js";
-
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-);
 
 const CartSummary = () => {
   const { formattedTotalPrice, cartDetails, cartCount, redirectToCheckout } =
@@ -32,26 +27,26 @@ const CartSummary = () => {
   return (
     <section
       aria-labelledby="summary-heading"
-      className="mt-16 rounded-lg border-2 border-gray-200 bg-gray-50 px-4 py-6 shadow-md dark:border-gray-900 dark:bg-black sm:p-6 lg:col-span-5 lg:mt-0 lg:p-8"
+      className="md:mt-16 rounded-md border-2 border-gray-200 bg-gray-50 px-8 py-6 shadow-md md:p-6 lg:col-span-5 lg:mt-0 lg:p-8"
     >
       <h2 id="summary-heading" className="font-medium tracking-[.2em]">
         ORDER SUMMARY
       </h2>
 
-      <dl className="mt-6 space-y-4">
+      <dl className="mt-6 space-y-4 font-tinos">
         <div className="flex items-center justify-between">
-          <dt>Subtotal</dt>
-          <dd className="font-medium">{formattedTotalPrice}</dd>
+          <dt>Subtotal:</dt>
+          <dd>{formattedTotalPrice}</dd>
         </div>
         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600">
           <dt className="flex items-center">
-            <span>Shipping estimate</span>
+            <span>Shipping estimate:</span>
           </dt>
-          <dd className="font-medium">$0.00</dd>
+          <dd>$0.00</dd>
         </div>
         <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600">
-          <dt>Order total</dt>
-          <dd className="font-medium">{formattedTotalPrice}</dd>
+          <dt>Order total:</dt>
+          <dd>{formattedTotalPrice}</dd>
         </div>
       </dl>
 
