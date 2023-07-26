@@ -66,26 +66,25 @@ const ProductInfo = ({ productDetails }) => {
     setQuantity(1);
   };
 
-  const setUpBuyNow = () => {
-    clearCart();
-
-    addItem(productDetails, { count: quantity });
-  };
-
   const buyNow = async () => {
-    const res = await fetch("/api/checkout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(cartDetails),
-    });
+    console.log(cartDetails);
+    clearCart().then(() => {
+      addItem(productDetails, { count: quantity }).then(async () => {
+        const res = await fetch("/api/checkout", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(cartDetails),
+        });
 
-    const data = await res.json();
-    const result = await redirectToCheckout(data.id);
-    if (result.error) {
-      alert(result.error.message);
-    }
+        const data = await res.json();
+        const result = await redirectToCheckout(data.id);
+        if (result.error) {
+          alert(result.error.message);
+        }
+      });
+    });
   };
 
   return (
