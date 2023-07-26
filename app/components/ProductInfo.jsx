@@ -75,7 +75,7 @@ const ProductInfo = ({ productDetails }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(cartDetails)
+      body: JSON.stringify(cartDetails),
     });
 
     const data = await res.json();
