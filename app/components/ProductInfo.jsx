@@ -67,15 +67,16 @@ const ProductInfo = ({ productDetails }) => {
   };
 
   const buyNow = async () => {
-    await clearCart();
-    await addItem(productDetails, { count: quantity });
+    clearCart();
+    addItem(productDetails, { count: quantity });
+    const b = JSON.stringify(cartDetails);
 
     const res = await fetch("/api/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(cartDetails),
+      body: b,
     });
 
     const data = await res.json();
@@ -83,6 +84,8 @@ const ProductInfo = ({ productDetails }) => {
     if (result.error) {
       alert(result.error.message);
     }
+
+    setQuantity(1);
   };
 
   return (
@@ -171,10 +174,7 @@ const ProductInfo = ({ productDetails }) => {
 
           <button
             className="px-6 py-2 md:px-8 md:py-4 bg-[#E50914] hover:bg-red-600 rounded-full text-white"
-            onClick={() => {
-              buyNow();
-              setQuantity(1);
-            }}
+            onClick={buyNow}
           >
             BUY NOW
           </button>
