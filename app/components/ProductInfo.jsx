@@ -174,7 +174,6 @@ const ProductInfo = ({ productDetails }) => {
           <button
             className="px-6 py-2 md:px-8 md:py-4 bg-[#E50914] hover:bg-red-600 rounded-full text-white"
             onClick={() => {
-              setUpBuyNow();
               buyNow();
               setQuantity(1);
             }}
