@@ -67,24 +67,25 @@ const ProductInfo = ({ productDetails }) => {
   };
 
   const buyNow = async () => {
+    clearCart();
+    addItem(productDetails, { count: quantity });
     console.log(cartDetails);
-    clearCart().then(() => {
-      addItem(productDetails, { count: quantity }).then(async () => {
-        const res = await fetch("/api/checkout", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(cartDetails),
-        });
+    console.log("JSON");
+    console.log(JSON.stringify(cartDetails));
 
-        const data = await res.json();
-        const result = await redirectToCheckout(data.id);
-        if (result.error) {
-          alert(result.error.message);
-        }
-      });
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cartDetails),
     });
+
+    const data = await res.json();
+    const result = await redirectToCheckout(data.id);
+    if (result.error) {
+      alert(result.error.message);
+    }
   };
 
   return (
