@@ -11,9 +11,9 @@ const ProductInfo = ({ productDetails }) => {
     addItem,
     incrementItem,
     cartDetails,
+    clearCart,
     redirectToCheckout,
     setItemQuantity,
-    checkoutSingleItem,
   } = useShoppingCart();
   const isInCart = !!cartDetails?.[productDetails._id];
 
@@ -67,21 +67,21 @@ const ProductInfo = ({ productDetails }) => {
   };
 
   const buyNow = async () => {
-    checkoutSingleItem({ sku: productDetails.sku, quantity: quantity });
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        [productDetails._id]: { ...productDetails, quantity: quantity },
+      }),
+    });
 
-    // const res = await fetch("/api/checkout", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(cartDetails),
-    // });
-
-    // const data = await res.json();
-    // const result = await redirectToCheckout(data.id);
-    // if (result.error) {
-    //   alert(result.error.message);
-    // }
+    const data = await res.json();
+    const result = await redirectToCheckout(data.id);
+    if (result.error) {
+      alert(result.error.message);
+    }
 
     setQuantity(1);
   };

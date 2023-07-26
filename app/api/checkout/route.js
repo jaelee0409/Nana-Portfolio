@@ -5,11 +5,7 @@ import { stripe } from "../../lib/stripe";
 
 export const POST = async (request) => {
   const cartDetails = await request.json();
-  console.log("[POST] cartDetails");
-  console.log(cartDetails);
   const lineItems = validateCartItems(inventory, cartDetails);
-  console.log("[POST] lineItems");
-  console.log(lineItems);
   const origin = request.headers.get("origin");
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
