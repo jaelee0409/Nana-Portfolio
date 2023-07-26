@@ -68,19 +68,20 @@ const ProductInfo = ({ productDetails }) => {
 
   const setUpBuyNow = () => {
     clearCart();
-    const item = {
-      ...productDetails,
-    };
-    addItem(item, { count: quantity });
+
+    addItem(productDetails, { count: quantity });
   };
 
   const buyNow = async () => {
-    const response = await fetch("/api/checkout", {
+    const res = await fetch("/api/checkout", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(cartDetails),
     });
 
-    const data = await response.json();
+    const data = await res.json();
     const result = await redirectToCheckout(data.id);
     if (result.error) {
       alert(result.error.message);
