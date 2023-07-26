@@ -69,14 +69,13 @@ const ProductInfo = ({ productDetails }) => {
   const buyNow = async () => {
     clearCart();
     addItem(productDetails, { count: quantity });
-    const b = await JSON.stringify(cartDetails);
 
     const res = await fetch("/api/checkout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: b,
+      body: JSON.stringify(cartDetails)
     });
 
     const data = await res.json();
