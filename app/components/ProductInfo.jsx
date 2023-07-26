@@ -67,8 +67,8 @@ const ProductInfo = ({ productDetails }) => {
   };
 
   const buyNow = async () => {
-    clearCart();
-    addItem(productDetails, { count: quantity });
+    await clearCart();
+    await addItem(productDetails, { count: quantity });
 
     const res = await fetch("/api/checkout", {
       method: "POST",
