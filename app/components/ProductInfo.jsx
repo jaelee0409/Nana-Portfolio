@@ -1,15 +1,25 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useShoppingCart, formatCurrencyString } from "use-shopping-cart";
 import toast from "react-hot-toast";
 import Link from "next/link";
 
 const ProductInfo = ({ productDetails }) => {
   const [quantity, setQuantity] = useState(1);
-  const { addItem, incrementItem, cartDetails, clearCart, redirectToCheckout } =
-    useShoppingCart();
+  const {
+    addItem,
+    incrementItem,
+    cartDetails,
+    clearCart,
+    redirectToCheckout,
+    setItemQuantity,
+  } = useShoppingCart();
   const isInCart = !!cartDetails?.[productDetails._id];
+
+  useEffect(() => {
+    setItemQuantity(productDetails.id, Number(quantity));
+  }, [quantity]);
 
   const decreaseQuantity = () => {
     if (quantity > 1) {
@@ -67,9 +77,6 @@ const ProductInfo = ({ productDetails }) => {
   const buyNow = async () => {
     const response = await fetch("/api/checkout", {
       method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
       body: JSON.stringify(cartDetails),
     });
 
@@ -149,9 +156,6 @@ const ProductInfo = ({ productDetails }) => {
                 height="1em"
                 width="1em"
               >
-                <defs>
-                  <style />
-                </defs>
                 <path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z" />
                 <path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z" />
               </svg>
@@ -162,7 +166,6 @@ const ProductInfo = ({ productDetails }) => {
         <div className="flex font-medium md:text-xl tracking-[.2em] space-x-4 items-center">
           <button
             className="px-4 py-2 md:px-6 md:py-4 bg-white hover:bg-gray-200 text-black border-2 border-black rounded-none"
-            data-ripple-light="true"
             onClick={addToCart}
           >
             ADD TO CART
@@ -170,7 +173,6 @@ const ProductInfo = ({ productDetails }) => {
 
           <button
             className="px-6 py-2 md:px-8 md:py-4 bg-[#E50914] hover:bg-red-600 rounded-full text-white"
-            data-ripple-light="true"
             onClick={() => {
               setUpBuyNow();
               buyNow();

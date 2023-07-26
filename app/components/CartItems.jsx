@@ -5,8 +5,7 @@ import { useShoppingCart } from "use-shopping-cart";
 import CartItem from "./CartItem";
 
 const CartItems = () => {
-  const { cartDetails, removeItem, setItemQuantity, cartCount } =
-    useShoppingCart();
+  const { cartDetails, cartCount } = useShoppingCart();
 
   return (
     <div>

@@ -11,9 +11,6 @@ const CartSummary = () => {
   const checkout = async () => {
     const response = await fetch("/api/checkout", {
       method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
       body: JSON.stringify(cartDetails),
     });
 
