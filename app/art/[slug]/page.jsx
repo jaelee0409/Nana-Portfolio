@@ -50,7 +50,7 @@ const page = async ({ params }) => {
       })}
       <div className="flex flex-row items-center justify-center font-medium md:text-xl tracking-[.2em] mt-8 space-x-16">
         <Link href={`${prevLink}`}>
-          <div className="flex flex-row items-center justify-center">
+          <div className="flex flex-row items-center justify-center hover:underline underline-offset-8">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -70,7 +70,7 @@ const page = async ({ params }) => {
         </Link>
 
         <Link href="/">
-          <div className="flex flex-row items-center justify-center">
+          <div className="flex flex-row items-center justify-center hover:underline underline-offset-8">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -90,7 +90,7 @@ const page = async ({ params }) => {
         </Link>
 
         <Link href={`${nextLink}`}>
-          <div className="flex flex-row items-center justify-center">
+          <div className="flex flex-row items-center justify-center hover:underline underline-offset-8">
             <div className="hidden md:flex">NEXT</div>
             <svg
               xmlns="http://www.w3.org/2000/svg"

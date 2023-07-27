@@ -15,6 +15,8 @@ import MenuAbout from "../../public/nav_4_ABOUT-min.png";
 import MenuShopHovered from "../../public/nav_hover_5_SHOP-min.png";
 import MenuShop from "../../public/nav_5_SHOP-min.png";
 
+import { BiShoppingBag } from "react-icons/bi";
+
 const Navbar = () => {
   const menuRef = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -65,6 +67,7 @@ const Navbar = () => {
               </div>
             </Link>
           </div>
+
           <div className="hidden md:flex flex-end items-center md:ml-36 lg:ml-96">
             <Link href="/" className="mr-4">
               <div
@@ -124,9 +127,17 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
+
         <div className="flex md:hidden items-center justify-center">
+          <div className="flex md:hidden items-center">
+            <Link href="/cart">
+              <div className="flex items-center">
+                <BiShoppingBag className="w-8 h-8" />
+              </div>
+            </Link>
+          </div>
           <button
-            className="text-black outline-none"
+            className="text-black outline-none ml-2"
             onClick={() => {
               toggleMenu();
             }}
