@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { IoCloseOutline } from "react-icons/io5";
 
 export default function CartItem({ item }) {
   const { name, quantity, price } = item;
@@ -110,9 +111,9 @@ export default function CartItem({ item }) {
 
       <button
         onClick={removeItemFromCart}
-        className="font-medium text-center w-8 h-8 hover:bg-gray-200 rounded-full transition-colors duration-500 mt-2 md:mt-0"
+        className="w-8 h-8 flex justify-center items-center text-red-500 hover:bg-gray-200 rounded-full transition-colors duration-500 mt-2 md:mt-0"
       >
-        X
+        <IoCloseOutline className="w-7 h-7" />
       </button>
     </div>
   );

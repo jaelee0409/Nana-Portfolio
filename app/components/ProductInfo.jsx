@@ -171,7 +171,7 @@ const ProductInfo = ({ productDetails }) => {
           </button>
 
           <button
-            className="px-6 py-2 md:px-8 md:py-4 bg-[#E50914] hover:bg-red-600 rounded-full text-white"
+            className="px-6 py-2 md:px-8 md:py-4 bg-[#63AA9E] hover:bg-[#569E91] rounded-full text-white"
             onClick={buyNow}
           >
             BUY NOW

@@ -50,7 +50,7 @@ const CartSummary = () => {
       <button
         onClick={checkout}
         disabled={isDisabled}
-        className="font-medium tracking-[.2em] bg-[#556cd6] h-10 text-white w-full rounded-md mt-6 disabled:bg-gray-400"
+        className="font-medium tracking-[.2em] bg-[#63AA9E] hover:bg-[#569E91] h-10 text-white w-full rounded-md mt-6 disabled:bg-gray-400"
       >
         CHECKOUT
       </button>
