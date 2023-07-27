@@ -14,7 +14,12 @@ function CartProvider({ children }) {
       allowedCountries={["US"]}
       billingAddressCollection={true}
     >
-      <Toaster />
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          duration: 2000,
+        }}
+      />
       {children}
     </USCProvider>
   );

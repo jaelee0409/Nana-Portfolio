@@ -33,8 +33,7 @@ export default function CartItem({ item }) {
         <span className="flex">
           <b className="mr-1">{name}</b> removed from cart
         </span>
-      </div>,
-      { duration: 2000 }
+      </div>
     );
   };
 
@@ -45,9 +44,9 @@ export default function CartItem({ item }) {
         alt={urlForImage(item.images[0].asset._ref).toString()}
         width={500}
         height={500}
-        className="h-16 w-16 object-cover object-center md:h-32 md:w-32"
+        className="h-16 w-16 object-cover object-center md:h-32 md:w-32 mt-4 md:mt-0"
       />
-      <div className="justify-center mt-4 md:mt-0">
+      <div className="justify-center mt-2 md:mt-0">
         <span className="font-tinos">{name.toUpperCase()}</span>
       </div>
       <div className="font-tinos md:ml-auto mt-2 md:mt-0">
@@ -111,7 +110,7 @@ export default function CartItem({ item }) {
 
       <button
         onClick={removeItemFromCart}
-        className="w-8 h-8 flex justify-center items-center text-red-500 hover:bg-gray-200 rounded-full transition-colors duration-500 mt-2 md:mt-0"
+        className="w-8 h-8 flex justify-center items-center text-red-500 hover:bg-gray-200 rounded-full transition-colors duration-500 mt-2 md:mt-0 mb-2 md:mb-0"
       >
         <IoCloseOutline className="w-7 h-7" />
       </button>

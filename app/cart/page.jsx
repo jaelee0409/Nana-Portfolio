@@ -10,7 +10,7 @@ const page = () => {
         </div>
 
         <div className="flex flex-col md:flex-row md:space-x-8">
-          <div className="flex flex-col md:w-3/5 mt-8 mx-2 md:mx-0">
+          <div className="flex flex-col md:w-3/5 mx-2 md:mx-0">
             <CartItems />
           </div>
           <div className="md:w-2/5 mt-8 mx-2 md:mx-0">

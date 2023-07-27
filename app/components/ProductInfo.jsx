@@ -59,8 +59,7 @@ const ProductInfo = ({ productDetails }) => {
             </svg>
           </div>
         </Link>
-      </div>,
-      { duration: 2000 }
+      </div>
     );
 
     setQuantity(1);

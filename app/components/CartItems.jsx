@@ -16,7 +16,9 @@ const CartItems = () => {
           ))}
         </div>
       ) : (
-        <div className="">You have no items in your cart</div>
+        <div className="text-center md:text-start mt-8 mb-8">
+          You have no items in your cart
+        </div>
       )}
     </div>
   );
