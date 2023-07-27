@@ -47,7 +47,7 @@ const ProductGallery = ({ productDetails }) => {
                 />
                 {index === selectedImage && (
                   <div
-                    className="absolute inset-0 ring-1 ring-[#E50914]"
+                    className="absolute inset-0 ring-2 ring-offset-2 ring-[#63AA9E]"
                     aria-hidden="true"
                   ></div>
                 )}
