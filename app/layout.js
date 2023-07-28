@@ -11,7 +11,7 @@ const roboto_flex = Roboto_Flex({
 });
 
 const tinos = Tinos({
-  weight: "400",
+  weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
   variable: "--font-tinos",

@@ -29,7 +29,7 @@ const page = async ({ params }) => {
       <div className="text-center font-medium md:text-xl tracking-[.2em] mb-2 md:mb-4 mt-4 md:mt-0">
         {project[0].projectName.toUpperCase()}
       </div>
-      <div className="font-tinos text-center text-sm md:text-lg mb-4">
+      <div className="font-tinos text-center text-sm md:text-base mb-4">
         {project[0].description}
       </div>
       <div>
@@ -41,19 +41,19 @@ const page = async ({ params }) => {
           height={0}
           quality={100}
           sizes="100vw"
-          style={{ width: "auto", height: "100%" }}
+          style={{ width: "100%", height: "100%" }}
         />
       </div>
-      <div className="flex flex-row items-center justify-center font-medium md:text-xl tracking-[.2em] mt-8 space-x-16">
+      <div className="flex flex-row items-center justify-center font-medium tracking-[.2em] mt-8 space-x-16">
         <Link href={`${prevLink}`}>
-          <div className="flex flex-row items-center justify-center hover:underline underline-offset-8">
+          <div className="flex flex-row items-center justify-center hover:underline underline-offset-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 md:mr-4"
+              className="w-4 h-4 md:mr-4"
             >
               <path
                 strokeLinecap="round"
@@ -66,14 +66,14 @@ const page = async ({ params }) => {
         </Link>
 
         <Link href="/sketchbook">
-          <div className="flex flex-row items-center justify-center hover:underline underline-offset-8">
+          <div className="flex flex-row items-center justify-center hover:underline underline-offset-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 md:mr-4 hidden md:flex"
+              className="w-4 h-4 md:mr-4 hidden md:flex"
             >
               <path
                 strokeLinecap="round"
@@ -86,7 +86,7 @@ const page = async ({ params }) => {
         </Link>
 
         <Link href={`${nextLink}`}>
-          <div className="flex flex-row items-center justify-center hover:underline underline-offset-8">
+          <div className="flex flex-row items-center justify-center hover:underline underline-offset-4">
             <div className="hidden md:flex">NEXT</div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ const page = async ({ params }) => {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-6 h-6 md:ml-4"
+              className="w-4 h-4 md:ml-4"
             >
               <path
                 strokeLinecap="round"

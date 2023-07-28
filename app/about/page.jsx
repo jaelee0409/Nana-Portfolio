@@ -15,7 +15,7 @@ const AboutPage = () => {
         <h1 className="font-medium md:text-xl tracking-[.2em] my-2 lg:my-0 lg:mb-4">
           HELLO!
         </h1>
-        <div className="font-tinos space-y-2 md:space-y-4">
+        <div className="font-tinos text-sm md:text-base space-y-2 md:space-y-4">
           <p className="leading-relaxed md:leading-loose">
             I’m Nana, a designer, illustrator, and artist living in New York
             City. I have been working as a textile and dinnerware designer at
@@ -33,6 +33,26 @@ const AboutPage = () => {
             I am always excited to hear about freelance illustration or design
             opportunities! If you would like to connect or say hi, please send
             me an email!
+          </p>
+          <p className="flex flex-col leading-relaxed md:leading-loose">
+            <span>
+              Email:{" "}
+              <a
+                href="mailto:anheinrich22@gmail.com"
+                className="underline underline-offset-1 hover:text-[#569E91] font-bold"
+              >
+                anheinrich22@gmail.com
+              </a>
+            </span>
+            <span>
+              Follow on{" "}
+              <a
+                href="https://www.instagram.com/nanapaintspets/"
+                className="underline underline-offset-1 hover:text-[#569E91] font-bold"
+              >
+                Instagram
+              </a>
+            </span>
           </p>
         </div>
       </div>
