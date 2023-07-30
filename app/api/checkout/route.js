@@ -14,7 +14,7 @@ export const POST = async (request) => {
     payment_method_types: ["card"],
     shipping_address_collection: { allowed_countries: ["US"] },
     billing_address_collection: "auto",
-    shipping_options: [{ shipping_rate: "shr_1NXiyCBAIs3IG1yTggiaNLJz" }],
+    shipping_options: [{ shipping_rate: "shr_1NWcb2BAIs3IG1yTALgngGN2" }],
     success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/cart`,
   });

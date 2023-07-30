@@ -5,7 +5,7 @@ const products = [
     name: "Storybook Portrait",
     price: 7000,
     currency: "USD",
-    stripePriceId: "price_1NXjHxBAIs3IG1yTyLeiNOa0",
+    stripePriceId: "price_1NXYKoBAIs3IG1yT922n4Xku",
   },
   {
     id: "22a695bf-adf8-4859-8a34-de7d46be6153",
@@ -13,7 +13,7 @@ const products = [
     name: "Classic Portrait",
     price: 13000,
     currency: "USD",
-    stripePriceId: "price_1NXjClBAIs3IG1yTLLSJem2A",
+    stripePriceId: "price_1NXYPyBAIs3IG1yTq0IkCcs6",
   },
 ];
 
