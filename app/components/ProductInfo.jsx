@@ -86,96 +86,93 @@ const ProductInfo = ({ productDetails }) => {
   };
 
   return (
-    <div className="flex flex-col">
-      <div className="divide-y md:divide-y-2 divide-black mx-auto">
-        <div className="font-medium md:text-xl tracking-[.2em] text-center mb-4">
-          {productDetails.name.toUpperCase()}
-        </div>
-        <div className="font-medium md:text-xl tracking-[.2em] text-center">
-          <div className="mt-4">
-            {formatCurrencyString({
-              value: productDetails.price,
-              currency: "USD",
-            })}
-          </div>
+    <div className="flex flex-col max-w-lg mx-auto space-y-8">
+      {/* Name + Price */}
+      <div className="text-start text-xl tracking-[.2em] space-y-2">
+        <h1 className="font-bold">{productDetails.name.toUpperCase()}</h1>
+        <p className="">
+          {formatCurrencyString({
+            value: productDetails.price,
+            currency: "USD",
+          })}
+        </p>
+      </div>
+
+      {/* Description */}
+      <div className="mx-auto w-full text-gray-text space-y-2">
+        <p className="font-baskervville text-base md:text-lg leading-relaxed">
+          {productDetails.description}
+        </p>
+        <ul className="font-baskervville list-disc list-inside text-sm md:text-base space-y-1">
+          {productDetails.details.map((detail, i) => (
+            <li key={i}>{detail}</li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Quantity Selector */}
+      <div className="flex items-center space-x-2">
+        <span className="font-baskervville text-gray-text">Quantity:</span>
+        <div className="flex items-center border border-gray-300 rounded-full px-2 py-1">
+          <button
+            onClick={decreaseQuantity}
+            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-300 transition"
+          >
+            <svg
+              viewBox="0 0 1024 1024"
+              fill="currentColor"
+              className="w-4 h-4"
+            >
+              <path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" />
+            </svg>
+          </button>
+
+          <input
+            type="number"
+            min={1}
+            max={100}
+            value={quantity}
+            onChange={(e) => {
+              if (+e.target.value <= 100 && +e.target.value > 0)
+                setQuantity(+e.target.value);
+            }}
+            className="w-12 text-center focus:outline-none focus:ring-0 appearance-none
+    [&::-webkit-outer-spin-button]:appearance-none
+    [&::-webkit-inner-spin-button]:appearance-none
+    [&::-ms-clear]:hidden"
+          />
+
+          <button
+            onClick={increaseQuantity}
+            className="w-8 h-8 flex items-center justify-center rounded-3xl hover:bg-gray-300 transition"
+          >
+            <svg
+              viewBox="0 0 1024 1024"
+              fill="currentColor"
+              className="w-4 h-4"
+            >
+              <path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z" />
+              <path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z" />
+            </svg>
+          </button>
         </div>
       </div>
-      <div className="mx-auto">
-        <div className="font-tinos my-8 mx-2">{productDetails.description}</div>
-        <ul className="font-tinos list-disc mx-4 mb-8">
-          {productDetails.details.map((detail, i) => {
-            return <li key={i}>{detail}</li>;
-          })}
-        </ul>
 
-        <div className="flex mb-8 items-center">
-          <div className="font-tinos mx-2">Quantity: </div>
-          <div className="flex border md:border-2 border-black items-center justify-center space-x-2 md:space-x-4 p-1">
-            <span
-              onClick={() => {
-                decreaseQuantity();
-              }}
-            >
-              <svg
-                viewBox="0 0 1024 1024"
-                fill="currentColor"
-                height="1em"
-                width="1em"
-              >
-                <path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" />
-              </svg>
-            </span>
+      {/* Action Buttons */}
+      <div className="flex space-x-4 mt-8">
+        <button
+          onClick={addToCart}
+          className="px-6 py-3 rounded-3xl border border-gray-300 font-bold hover:text-white hover:bg-black hover:border-black transition-transform duration-200 hover:scale-105"
+        >
+          ADD TO CART
+        </button>
 
-            <span>
-              <input
-                type="number"
-                min={1}
-                max={100}
-                value={quantity}
-                onChange={(event) => {
-                  if (
-                    Number(event.target.value) <= 100 &&
-                    Number(event.target.value) > 0
-                  )
-                    setQuantity(Number(event.target.value));
-                }}
-                className="w-8 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none text-center focus-visible:outline-none"
-              />
-            </span>
-
-            <span
-              onClick={() => {
-                increaseQuantity();
-              }}
-            >
-              <svg
-                viewBox="0 0 1024 1024"
-                fill="currentColor"
-                height="1em"
-                width="1em"
-              >
-                <path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z" />
-                <path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z" />
-              </svg>
-            </span>
-          </div>
-        </div>
-
-        <div className="flex font-medium md:text-xl tracking-[.2em] space-x-4 items-center">
-          <button
-            className="px-4 py-2 md:px-6 md:py-4 bg-white hover:bg-gray-200 text-black border-2 border-black rounded-none"
-            onClick={addToCart}
-          >
-            ADD TO CART
-          </button>
-
-          <button
-            className="px-6 py-2 md:px-8 md:py-4 bg-[#63AA9E] hover:bg-[#569E91] rounded-full text-white"
-            onClick={buyNow}
-          >
-            BUY NOW
-          </button>
-        </div>
+        <button
+          onClick={buyNow}
+          className="px-6 py-3 rounded-3xl bg-primary text-white font-bold hover:bg-primary/80 hover:scale-105 hover:shadow-lg transition-transform duration-200"
+        >
+          BUY NOW
+        </button>
       </div>
     </div>
   );

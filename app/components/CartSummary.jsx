@@ -24,13 +24,13 @@ const CartSummary = () => {
   return (
     <section
       aria-labelledby="summary-heading"
-      className="rounded-md border-2 border-gray-200 bg-gray-50 px-8 py-6 shadow-md md:p-8 md:mt-0"
+      className="rounded-md bg-gray-50 px-8 py-6 shadow-md md:p-8 md:mt-0 font-roboto"
     >
-      <h2 id="summary-heading" className="font-medium tracking-[.2em]">
+      <h2 id="summary-heading" className="font-bold tracking-[.2em]">
         ORDER SUMMARY
       </h2>
 
-      <dl className="mt-6 space-y-4 font-tinos">
+      <dl className="mt-6 space-y-4 text-gray-text">
         <div className="flex items-center justify-between">
           <dt>Subtotal:</dt>
           <dd>{formattedTotalPrice}</dd>
@@ -41,7 +41,7 @@ const CartSummary = () => {
           </dt>
           <dd>$0.00</dd>
         </div>
-        <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600">
+        <div className="flex items-center justify-between border-t border-gray-200 pt-4 dark:border-gray-600 text-black">
           <dt>Order total:</dt>
           <dd>{formattedTotalPrice}</dd>
         </div>

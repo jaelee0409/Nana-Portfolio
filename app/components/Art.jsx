@@ -16,17 +16,19 @@ const Art = ({ data }) => {
 
   return (
     <>
-      <div className="relative group cursor-pointer mb-3 md:mb-5 lg:mb-7 shadow-lg rounded-lg overflow-hidden">
+      <div className="relative group cursor-pointer mb-3 md:mb-5 lg:mb-7 shadow-lg rounded-3xl overflow-hidden">
         <Link href={`/${folderName}/${data.slug.current}`}>
           <Image
-            className="group-hover:opacity-25"
+            className="group-hover:opacity-25 duration-300 h-full w-full object-cover"
             src={mainImageUrl}
             alt={mainImageUrl}
             width={500}
             height={500}
           />
-          <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 flex justify-center items-center text-center tracking-[.2em] text-xs md:text-base text-black">
-            {data.projectName.toUpperCase()}
+          <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 flex justify-center items-center">
+            <div className="text-center tracking-wider md:tracking-[0.2em] text-sm md:text-2xl text-black/80 font-permanent-marker">
+              {data.projectName.toUpperCase()}
+            </div>
           </div>
         </Link>
       </div>

@@ -1,20 +1,28 @@
 import "./globals.css";
-import { Roboto_Flex, Tinos } from "next/font/google";
+import {
+  Roboto_Flex,
+  Libre_Baskerville,
+  Permanent_Marker,
+} from "next/font/google";
 
 import CartProvider from "./components/Providers";
 import Layout from "./components/Layout";
 
 const roboto_flex = Roboto_Flex({
   subsets: ["latin"],
-  display: "swap",
   variable: "--font-roboto-flex",
 });
 
-const tinos = Tinos({
-  weight: ["400", "700"],
+const baskervville = Libre_Baskerville({
+  weight: "400",
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-tinos",
+  variable: "--font-baskervville-flex",
+});
+
+const permanent_marker = Permanent_Marker({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-permanent-marker-flex",
 });
 
 export const metadata = {
@@ -28,10 +36,9 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${roboto_flex.variable} ${tinos.variable} overflow-y-scroll`}
+      className={`${roboto_flex.variable} ${baskervville.variable} ${permanent_marker.variable} overflow-y-scroll`}
     >
-      <meta name="google" content="notranslate"></meta>
-      <body className="flex flex-col min-h-screen bg-white md:max-w-7xl md:mx-auto p-2 md:p-16">
+      <body className="flex flex-col min-h-screen bg-background md:max-w-7xl md:mx-auto p-2 md:pt-16">
         <CartProvider>
           <Layout>{children}</Layout>
         </CartProvider>

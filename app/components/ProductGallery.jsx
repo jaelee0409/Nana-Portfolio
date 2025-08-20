@@ -11,7 +11,7 @@ const ProductGallery = ({ productDetails }) => {
     <div className="flex flex-col">
       <div className="items-center mb-4 md:mb-8">
         <Image
-          className="border border-black mx-auto"
+          className="mx-auto rounded-3xl shadow-lg"
           src={urlForImage(
             productDetails.images[selectedImage].asset._ref
           ).toString()}
@@ -36,18 +36,15 @@ const ProductGallery = ({ productDetails }) => {
                 className="relative flex h-auto cursor-pointer items-center justify-center"
               >
                 <Image
-                  className="hover:opacity-25 border border-black"
+                  className="hover:opacity-25 rounded-3xl h-full w-full object-cover"
                   src={urlForImage(image.asset._ref).toString()}
                   alt={urlForImage(image.asset._ref).toString()}
-                  width={0}
-                  height={0}
-                  quality={100}
-                  sizes="100vw"
-                  style={{ width: "auto", height: "100%" }}
+                  width={500}
+                  height={500}
                 />
                 {index === selectedImage && (
                   <div
-                    className="absolute inset-0 ring-2 ring-offset-2 ring-[#63AA9E]"
+                    className="absolute inset-0 ring-2 ring-offset-1 ring-primary rounded-3xl shadow-lg ring-offset-primary"
                     aria-hidden="true"
                   ></div>
                 )}

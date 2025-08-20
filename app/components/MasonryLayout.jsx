@@ -14,7 +14,7 @@ const breakpointColumnsObj = {
 const MasonryLayout = ({ projects }) => {
   return (
     <Masonry
-      className="flex w-auto break-inside-avoid gap-3 md:gap-5 lg:gap-7"
+      className="flex w-auto break-inside-avoid gap-4 md:gap-6 lg:gap-8"
       breakpointCols={breakpointColumnsObj}
     >
       {projects?.map((project) => {

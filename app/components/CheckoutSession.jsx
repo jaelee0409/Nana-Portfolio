@@ -26,12 +26,12 @@ const CheckoutSession = ({ customerDetails }) => {
         ORDER SUCCESSFUL!
       </div>
       <div className="flex items-center space-x-1 mt-8">
-        <div className="font-tinos">Thank you,</div>
-        <div className="font-tinos">
+        <div className="font-baskervville">Thank you,</div>
+        <div className="font-baskervville">
           <b>{customerDetails.name.toUpperCase()}</b>!
         </div>
       </div>
-      <div className="mt-4 font-tinos">
+      <div className="mt-4 font-baskervville">
         Check your purchase email{" "}
         <span className="text-indigo-500">{customerDetails.email}</span> for
         your invoice.

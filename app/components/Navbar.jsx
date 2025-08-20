@@ -38,7 +38,7 @@ const Navbar = () => {
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutsideMenu);
     return () => {
-      document.addEventListener("mousedown", handleClickOutsideMenu);
+      document.removeEventListener("mousedown", handleClickOutsideMenu);
     };
   }, []);
 
@@ -137,7 +137,7 @@ const Navbar = () => {
             </Link>
           </div>
           <button
-            className="text-black outline-none ml-2"
+            className="text-black outline-hidden ml-2"
             onClick={() => {
               toggleMenu();
             }}
@@ -177,7 +177,7 @@ const Navbar = () => {
 
       <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}>
         <div className="absolute w-full pr-4 z-10">
-          <div className="flex flex-col items-center bg-white/[0.90] mt-2">
+          <div className="flex flex-col items-center bg-white/90 mt-2">
             <Link href="/">
               <div
                 onMouseOver={(e) => setHovered2(true)}
