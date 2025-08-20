@@ -16,7 +16,7 @@ const Art = ({ data }) => {
 
   return (
     <>
-      <div className="relative group cursor-pointer mb-3 md:mb-5 lg:mb-7">
+      <div className="relative group cursor-pointer mb-3 md:mb-5 lg:mb-7 shadow-lg rounded-lg overflow-hidden">
         <Link href={`/${folderName}/${data.slug.current}`}>
           <Image
             className="group-hover:opacity-25"
