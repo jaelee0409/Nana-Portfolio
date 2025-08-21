@@ -43,7 +43,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="mb-4 md:mb-16" ref={menuRef}>
+    <nav className="mb-4 md:mb-8 lg:mb-16" ref={menuRef}>
       <div className="flex content-center justify-between">
         <div className="flex items-center">
           <div className="flex flex-start items-center">

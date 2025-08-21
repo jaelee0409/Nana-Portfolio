@@ -38,7 +38,7 @@ export default function CartItem({ item }) {
   };
 
   return (
-    <div className="flex flex-col md:flex-row md:items-center justify-start md:justify-between gap-4 py-8">
+    <div className="flex flex-col lg:flex-row lg:items-center justify-start lg:justify-between gap-4 py-8">
       <div className="flex items-center gap-8">
         {/* Image */}
         <Image
@@ -50,12 +50,12 @@ export default function CartItem({ item }) {
         />
 
         {/* Name */}
-        <div className="text-left mt-2 md:mt-0 flex-1 font-roboto tracking-[.2em]">
+        <div className="text-left flex-1 font-roboto tracking-[.2em]">
           {name.toUpperCase()}
         </div>
       </div>
 
-      <div className="flex items-center justify-between px-4 w-full md:w-auto space-x-8">
+      <div className="flex items-center justify-between w-full lg:w-auto space-x-8">
         {/* Price */}
         <div className="font-roboto text-gray-text text-sm md:text-base text-left">
           {formatCurrencyString({ value: price * quantity, currency: "USD" })}

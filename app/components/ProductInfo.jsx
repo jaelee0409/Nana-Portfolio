@@ -86,9 +86,9 @@ const ProductInfo = ({ productDetails }) => {
   };
 
   return (
-    <div className="flex flex-col max-w-lg mx-auto space-y-8">
+    <div className="flex flex-col max-w-lg mx-auto space-y-8 text-center items-center lg:items-start lg:text-start">
       {/* Name + Price */}
-      <div className="text-start text-xl tracking-[.2em] space-y-2">
+      <div className="text-xl tracking-[.2em] space-y-2">
         <h1 className="font-bold">{productDetails.name.toUpperCase()}</h1>
         <p className="">
           {formatCurrencyString({
@@ -99,19 +99,21 @@ const ProductInfo = ({ productDetails }) => {
       </div>
 
       {/* Description */}
-      <div className="mx-auto w-full text-gray-text space-y-2">
+      <div className="mx-auto w-full text-gray-text space-y-4">
         <p className="font-baskervville text-base md:text-lg leading-relaxed">
           {productDetails.description}
         </p>
         <ul className="font-baskervville list-disc list-inside text-sm md:text-base space-y-1">
           {productDetails.details.map((detail, i) => (
-            <li key={i}>{detail}</li>
+            <li key={i} className="text-start ml-16 lg:ml-0">
+              {detail}
+            </li>
           ))}
         </ul>
       </div>
 
       {/* Quantity Selector */}
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-2 mt-4">
         <span className="font-baskervville text-gray-text">Quantity:</span>
         <div className="flex items-center border border-gray-300 rounded-full px-2 py-1">
           <button
@@ -159,7 +161,7 @@ const ProductInfo = ({ productDetails }) => {
       </div>
 
       {/* Action Buttons */}
-      <div className="flex space-x-4 mt-8">
+      <div className="flex space-x-4">
         <button
           onClick={addToCart}
           className="px-6 py-3 rounded-3xl border border-gray-300 font-bold hover:text-white hover:bg-black hover:border-black transition-transform duration-200 hover:scale-105"

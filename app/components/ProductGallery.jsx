@@ -8,25 +8,22 @@ const ProductGallery = ({ productDetails }) => {
   const [selectedImage, setSelectedImage] = useState(0);
 
   return (
-    <div className="flex flex-col">
-      <div className="items-center mb-4 md:mb-8">
+    <div className="flex flex-col max-w-lg mx-auto">
+      <div className="items-center mb-8 md:mb-8">
         <Image
-          className="mx-auto rounded-3xl shadow-lg"
+          className="mx-auto rounded-3xl shadow-lg w-full h-full object-cover"
           src={urlForImage(
             productDetails.images[selectedImage].asset._ref
           ).toString()}
           alt={urlForImage(
             productDetails.images[selectedImage].asset._ref
           ).toString()}
-          width={0}
-          height={0}
-          quality={100}
-          sizes="100vw"
-          style={{ width: "auto", height: "100%" }}
+          width={500}
+          height={500}
         />
       </div>
 
-      <div className="mx-auto mb-8 md:mb-0">
+      <div className="mx-auto">
         <div className="grid grid-cols-5 gap-4">
           {productDetails.images.map((image, index) => {
             return (

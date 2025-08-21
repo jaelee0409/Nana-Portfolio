@@ -2,16 +2,17 @@ import Image from "next/image";
 
 const AboutPage = () => {
   return (
-    <div className="flex flex-col lg:flex-row lg:grow justify-between">
-      <div className="flex justify-center lg:w-3/5 mb-4 lg:mr-4 lg:mb-0">
+    <div className="flex flex-col lg:flex-row lg:grow justify-between items-center lg:items-start">
+      <div className="flex justify-center md:w-3/4 lg:w-1/2 mb-4 md:mb-8 lg:mr-0 lg:mb-0">
         <Image
           src="/profile_pic.jpg"
           alt="Profile Picture"
           width={669}
           height={729}
+          className="rounded-3xl shadow-lg w-full h-full object-cover"
         />
       </div>
-      <div className="lg:w-2/5 md:ml-24 flex flex-col">
+      <div className="md:w-3/4 lg:w-1/2 lg:px-12 xl:px-16 2xl:pl-24 flex flex-col">
         <h1 className="md:text-lg tracking-[.2em] font-roboto text-[#222222] mb-1">
           HELLO!
         </h1>

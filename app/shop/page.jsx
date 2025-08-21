@@ -30,8 +30,8 @@ const ShopPage = async () => {
                 height={500}
               />
               <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 flex justify-center items-center text-center tracking-[.2em]">
-                <div className="flex flex-col divide-y-2 divide-solid divide-black">
-                  <div className="font-permanent-marker text-xl md:text-2xl text-black/80 mb-2 md:mb-4">
+                <div className="flex flex-col">
+                  <div className="font-permanent-marker text-xl lg:text-2xl text-black/80 mb-2">
                     {product.name.toUpperCase()}
                   </div>
                   <div className="font-roboto text-sm md:text-base">

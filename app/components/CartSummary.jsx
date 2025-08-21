@@ -24,7 +24,7 @@ const CartSummary = () => {
   return (
     <section
       aria-labelledby="summary-heading"
-      className="rounded-3xl bg-gray-50 px-8 py-6 shadow-md md:p-8 mt-16 md:mt-0 font-roboto"
+      className="rounded-3xl bg-gray-50 px-8 py-6 shadow-md md:p-8 mt-16 lg:mt-0 font-roboto"
     >
       <h2 id="summary-heading" className="tracking-[.2em]">
         ORDER SUMMARY

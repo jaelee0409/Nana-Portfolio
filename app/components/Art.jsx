@@ -26,7 +26,7 @@ const Art = ({ data }) => {
             height={500}
           />
           <div className="opacity-0 group-hover:opacity-100 duration-300 absolute inset-0 flex justify-center items-center">
-            <div className="text-center tracking-wider md:tracking-[0.2em] text-sm md:text-2xl text-black/80 font-permanent-marker">
+            <div className="text-center tracking-wider md:tracking-[0.2em] text-sm md:text-lg lg:text-2xl text-black/80 font-permanent-marker">
               {data.projectName.toUpperCase()}
             </div>
           </div>

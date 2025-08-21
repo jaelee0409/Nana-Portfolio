@@ -9,12 +9,12 @@ const page = () => {
           SHOPPING CART
         </div>
 
-        <div className="flex flex-col md:flex-row md:space-x-8">
-          <div className="md:w-3/5">
+        <div className="flex flex-col lg:flex-row md:space-x-4 lx:space-x-8">
+          <div className="lg:w-3/5">
             <CartItems />
           </div>
 
-          <div className="md:w-2/5">
+          <div className="lg:w-2/5">
             <CartSummary />
           </div>
         </div>

@@ -8,11 +8,11 @@ const page = async ({ params }) => {
   const productDetails = await getShopProductDetails(params.slug);
 
   return (
-    <div className="flex flex-col md:flex-row">
-      <div className="md:w-1/2">
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
+      <div className="lg:w-1/2">
         <ProductGallery productDetails={productDetails} />
       </div>
-      <div className="md:w-1/2">
+      <div className="lg:w-1/2">
         <ProductInfo productDetails={productDetails} />
       </div>
     </div>
