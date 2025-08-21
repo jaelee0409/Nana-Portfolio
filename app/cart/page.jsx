@@ -5,7 +5,7 @@ const page = () => {
   return (
     <div>
       <div className="mx-auto divide-y divide-gray-300">
-        <div className="font-roboto font-bold md:text-xl tracking-[.2em] pb-4 mb-8 text-center md:text-start">
+        <div className="font-roboto md:text-xl tracking-[.2em] pb-4 mb-8 text-center md:text-start">
           SHOPPING CART
         </div>
 

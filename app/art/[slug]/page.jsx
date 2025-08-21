@@ -28,26 +28,26 @@ const page = async ({ params }) => {
       <div className="text-center font-bold md:text-xl tracking-[.2em] mb-2 md:mb-4 mt-4 md:mt-0 font-roboto">
         {project[0].projectName.toUpperCase()}
       </div>
-      <div className="font-baskervville text-center text-sm md:text-base mb-8 text-gray-text">
+
+      <div className="font-baskervville text-center text-sm md:text-base mb:8 md:mb-6 text-gray-text">
         {project[0].description}
       </div>
+
       {images?.map((image) => {
         const url = urlForImage(image.asset._ref).toString();
         return (
-          <div key={url}>
+          <div key={url} className="mx-auto py-8 flex justify-center">
             <Image
-              className="mx-auto py-4 md:py-8"
               src={url}
               alt={url}
-              width={0}
-              height={0}
-              quality={100}
-              sizes="100vw"
-              style={{ width: "100%", height: "100%" }}
+              width={2000}
+              height={500}
+              className="rounded-3xl shadow-lg w-auto h-auto"
             />
           </div>
         );
       })}
+
       <div className="flex flex-row items-center justify-center font-medium tracking-[.2em] mt-8 space-x-16">
         <Link href={`${prevLink}`}>
           <div className="flex flex-row items-center justify-center hover:underline underline-offset-4">

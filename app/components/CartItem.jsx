@@ -38,80 +38,83 @@ export default function CartItem({ item }) {
   };
 
   return (
-    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-y-4 md:gap-x-8 md:py-4">
-      {/* Image */}
-      <Image
-        src={urlForImage(item.images[0].asset._ref).toString()}
-        alt={urlForImage(item.images[0].asset._ref).toString()}
-        width={500}
-        height={500}
-        className="h-16 w-16 object-cover object-center md:h-32 md:w-32 rounded-3xl shadow-lg"
-      />
+    <div className="flex flex-col md:flex-row md:items-center justify-start md:justify-between gap-4 py-8">
+      <div className="flex items-center gap-8">
+        {/* Image */}
+        <Image
+          src={urlForImage(item.images[0].asset._ref).toString()}
+          alt={urlForImage(item.images[0].asset._ref).toString()}
+          width={500}
+          height={500}
+          className="h-16 w-16 object-cover object-center md:h-32 md:w-32 rounded-3xl shadow-lg"
+        />
 
-      {/* Name */}
-      <div className="text-center md:text-left mt-2 md:mt-0 flex-1 font-roboto tracking-[.2em]">
-        {name.toUpperCase()}
-      </div>
-
-      {/* Price */}
-      <div className="font-roboto text-gray-text text-sm md:text-base text-center md:text-left w-24">
-        {formatCurrencyString({ value: price, currency: "USD" })}
-      </div>
-
-      {/* Quantity Selector */}
-      <div className="flex items-center space-x-2">
-        <span className="font-roboto text-gray-text">Quantity:</span>
-        <div className="flex items-center border border-gray-300 rounded-3xl">
-          <button
-            onClick={decreaseQuantity}
-            className="w-8 h-8 flex items-center justify-center rounded-3xl hover:bg-gray-200"
-          >
-            <svg
-              viewBox="0 0 1024 1024"
-              fill="currentColor"
-              className="w-4 h-4"
-            >
-              <path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" />
-            </svg>
-          </button>
-
-          <input
-            type="number"
-            min={1}
-            max={100}
-            value={quantity}
-            onChange={(e) => {
-              if (+e.target.value <= 100 && +e.target.value > 0)
-                setQuantity(+e.target.value);
-            }}
-            className="w-12 text-center focus:outline-none focus:ring-0 appearance-none
-    [&::-webkit-outer-spin-button]:appearance-none
-    [&::-webkit-inner-spin-button]:appearance-none
-    [&::-ms-clear]:hidden"
-          />
-          <button
-            onClick={increaseQuantity}
-            className="w-8 h-8 flex items-center justify-center rounded-3xl hover:bg-gray-200"
-          >
-            <svg
-              viewBox="0 0 1024 1024"
-              fill="currentColor"
-              className="w-4 h-4"
-            >
-              <path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z" />
-              <path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z" />
-            </svg>
-          </button>
+        {/* Name */}
+        <div className="text-left mt-2 md:mt-0 flex-1 font-roboto tracking-[.2em]">
+          {name.toUpperCase()}
         </div>
       </div>
 
-      {/* Remove */}
-      <button
-        onClick={removeItemFromCart}
-        className="w-8 h-8 flex justify-center items-center text-red-500 hover:bg-gray-200 rounded-3xl transition"
-      >
-        <IoCloseOutline className="w-7 h-7" />
-      </button>
+      <div className="flex items-center justify-between px-4 w-full md:w-auto space-x-8">
+        {/* Price */}
+        <div className="font-roboto text-gray-text text-sm md:text-base text-left">
+          {formatCurrencyString({ value: price * quantity, currency: "USD" })}
+        </div>
+
+        {/* Quantity Selector */}
+        <div className="flex items-center space-x-2">
+          <div className="flex items-center border border-gray-300 rounded-3xl">
+            <button
+              onClick={decreaseQuantity}
+              className="w-8 h-8 flex items-center justify-center rounded-3xl hover:bg-gray-200"
+            >
+              <svg
+                viewBox="0 0 1024 1024"
+                fill="currentColor"
+                className="w-4 h-4"
+              >
+                <path d="M872 474H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h720c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" />
+              </svg>
+            </button>
+
+            <input
+              type="number"
+              min={1}
+              max={100}
+              value={quantity}
+              onChange={(e) => {
+                if (+e.target.value <= 100 && +e.target.value > 0)
+                  setQuantity(+e.target.value);
+              }}
+              className="w-12 text-center focus:outline-none focus:ring-0 appearance-none text-gray-text text-sm md:text-base
+    [&::-webkit-outer-spin-button]:appearance-none
+    [&::-webkit-inner-spin-button]:appearance-none
+    [&::-ms-clear]:hidden"
+            />
+            <button
+              onClick={increaseQuantity}
+              className="w-8 h-8 flex items-center justify-center rounded-3xl hover:bg-gray-200"
+            >
+              <svg
+                viewBox="0 0 1024 1024"
+                fill="currentColor"
+                className="w-4 h-4"
+              >
+                <path d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z" />
+                <path d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Remove */}
+        <button
+          onClick={removeItemFromCart}
+          className="w-8 h-8 flex justify-center items-center text-red-500 hover:bg-gray-200 rounded-3xl transition"
+        >
+          <IoCloseOutline className="w-7 h-7" />
+        </button>
+      </div>
     </div>
   );
 }

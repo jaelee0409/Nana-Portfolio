@@ -16,7 +16,7 @@ const CartItems = () => {
           ))}
         </div>
       ) : (
-        <div className="font-baskervville text-center md:text-start">
+        <div className="font-baskervville text-gray-text text-center md:text-start">
           You have no items in your cart
         </div>
       )}

@@ -11,7 +11,7 @@ const AboutPage = () => {
           height={729}
         />
       </div>
-      <div className="lg:w-2/5 ml-24 flex flex-col">
+      <div className="lg:w-2/5 md:ml-24 flex flex-col">
         <h1 className="md:text-lg tracking-[.2em] font-roboto text-[#222222] mb-1">
           HELLO!
         </h1>

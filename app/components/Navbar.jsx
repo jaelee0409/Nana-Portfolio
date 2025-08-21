@@ -43,7 +43,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="mb-2 md:mb-16" ref={menuRef}>
+    <nav className="mb-4 md:mb-16" ref={menuRef}>
       <div className="flex content-center justify-between">
         <div className="flex items-center">
           <div className="flex flex-start items-center">
@@ -128,16 +128,15 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex md:hidden items-center justify-center">
-          <div className="flex md:hidden items-center">
-            <Link href="/cart">
-              <div className="flex items-center">
-                <BiShoppingBag className="w-8 h-8" />
-              </div>
-            </Link>
-          </div>
+        <div className="flex md:hidden items-center justify-center gap-4">
+          <Link href="/cart">
+            <div className="flex items-center">
+              <BiShoppingBag className="w-8 h-8 text-gray-text" />
+            </div>
+          </Link>
+
           <button
-            className="text-black outline-hidden ml-2"
+            className="text-gray-text outline-hidden"
             onClick={() => {
               toggleMenu();
             }}
@@ -145,7 +144,7 @@ const Navbar = () => {
             {isMenuOpen ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-8 h-8 text-black"
+                className="w-8 h-8"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -158,7 +157,7 @@ const Navbar = () => {
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-8 h-8 text-black"
+                className="w-8 h-8"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -176,8 +175,42 @@ const Navbar = () => {
       </div>
 
       <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}>
-        <div className="absolute w-full pr-4 z-10">
-          <div className="flex flex-col items-center bg-white/90 mt-2">
+        {/* 드로어 */}
+        <div className="absolute right-0 w-full z-50 bg-bg/95 shadow-lg">
+          <div className="flex flex-col items-end p-4 space-y-2">
+            <Link href="/" onClick={() => setIsMenuOpen(false)}>
+              <NextImage
+                className="w-auto h-10"
+                src={hovered2 ? MenuArtHovered : MenuArt}
+                alt="Art"
+              />
+            </Link>
+            <Link href="/sketchbook" onClick={() => setIsMenuOpen(false)}>
+              <NextImage
+                className="w-auto h-10"
+                src={hovered3 ? MenuSketchbookHovered : MenuSketchbook}
+                alt="Sketchbook"
+              />
+            </Link>
+            <Link href="/about" onClick={() => setIsMenuOpen(false)}>
+              <NextImage
+                className="w-auto h-10"
+                src={hovered4 ? MenuAboutHovered : MenuAbout}
+                alt="About"
+              />
+            </Link>
+            <Link href="/shop" onClick={() => setIsMenuOpen(false)}>
+              <NextImage
+                className="w-auto h-10"
+                src={hovered5 ? MenuShopHovered : MenuShop}
+                alt="Shop"
+              />
+            </Link>
+          </div>
+        </div>
+
+        {/* <div className="fixed inset-0 z-10 overflow-y-auto">
+          <div className="flex flex-col items-end bg-bg/90 min-h-screen">
             <Link href="/">
               <div
                 onMouseOver={(e) => setHovered2(true)}
@@ -239,7 +272,7 @@ const Navbar = () => {
               </div>
             </Link>
           </div>
-        </div>
+        </div> */}
       </div>
     </nav>
   );
