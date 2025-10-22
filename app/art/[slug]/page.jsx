@@ -42,7 +42,7 @@ const page = async ({ params }) => {
               alt={url}
               width={2000}
               height={500}
-              className="rounded-3xl shadow-lg w-auto h-auto"
+              className="rounded-xl shadow-sm w-auto h-auto"
             />
           </div>
         );

@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
       className={`${roboto_flex.variable} ${baskervville.variable} ${permanent_marker.variable} overflow-y-scroll`}
     >
-      <body className="flex flex-col min-h-screen bg-background md:max-w-7xl md:mx-auto p-4 lg:pt-16">
+      <body className="flex flex-col min-h-screen bg-bg md:max-w-7xl md:mx-auto p-4 lg:pt-16">
         <CartProvider>
           <Layout>{children}</Layout>
         </CartProvider>

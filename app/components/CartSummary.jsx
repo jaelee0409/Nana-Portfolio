@@ -24,7 +24,7 @@ const CartSummary = () => {
   return (
     <section
       aria-labelledby="summary-heading"
-      className="rounded-3xl bg-gray-50 px-8 py-6 shadow-md md:p-8 mt-16 lg:mt-0 font-roboto"
+      className="rounded-xl bg-gray-50 px-8 py-6 shadow-sm md:p-8 mt-16 lg:mt-0 font-roboto"
     >
       <h2 id="summary-heading" className="tracking-[.2em]">
         ORDER SUMMARY
@@ -50,7 +50,7 @@ const CartSummary = () => {
       <button
         onClick={checkout}
         disabled={isDisabled}
-        className="font-medium tracking-[.2em] bg-[#63AA9E] hover:bg-[#569E91] h-10 text-white w-full rounded-3xl mt-6 disabled:bg-gray-400"
+        className="font-medium tracking-[.2em] bg-[#63AA9E] hover:bg-[#569E91] h-10 text-white w-full rounded-xl mt-6 disabled:bg-gray-400"
       >
         CHECKOUT
       </button>

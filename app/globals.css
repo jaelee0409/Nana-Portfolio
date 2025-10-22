@@ -2,7 +2,7 @@
 
 @theme {
   --color-primary: #63aa9e;
-  --color-background: rgba(153, 150, 143, 0.16);
+  /* --color-background: rgba(153, 150, 143, 0.16); */
   --color-bg: #efeeed;
 
   --font-roboto: var(--font-roboto-flex);

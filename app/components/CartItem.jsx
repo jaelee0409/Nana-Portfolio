@@ -46,7 +46,7 @@ export default function CartItem({ item }) {
           alt={urlForImage(item.images[0].asset._ref).toString()}
           width={500}
           height={500}
-          className="h-16 w-16 object-cover object-center md:h-32 md:w-32 rounded-3xl shadow-lg"
+          className="h-16 w-16 object-cover object-center md:h-32 md:w-32 rounded-xl shadow-sm"
         />
 
         {/* Name */}
@@ -63,10 +63,10 @@ export default function CartItem({ item }) {
 
         {/* Quantity Selector */}
         <div className="flex items-center space-x-2">
-          <div className="flex items-center border border-gray-300 rounded-3xl">
+          <div className="flex items-center border border-gray-300 rounded-xl">
             <button
               onClick={decreaseQuantity}
-              className="w-8 h-8 flex items-center justify-center rounded-3xl hover:bg-gray-200"
+              className="w-8 h-8 flex items-center justify-center rounded-xl hover:bg-gray-200"
             >
               <svg
                 viewBox="0 0 1024 1024"
@@ -93,7 +93,7 @@ export default function CartItem({ item }) {
             />
             <button
               onClick={increaseQuantity}
-              className="w-8 h-8 flex items-center justify-center rounded-3xl hover:bg-gray-200"
+              className="w-8 h-8 flex items-center justify-center rounded-xl hover:bg-gray-200"
             >
               <svg
                 viewBox="0 0 1024 1024"
@@ -110,7 +110,7 @@ export default function CartItem({ item }) {
         {/* Remove */}
         <button
           onClick={removeItemFromCart}
-          className="w-8 h-8 flex justify-center items-center text-red-500 hover:bg-gray-200 rounded-3xl transition"
+          className="w-8 h-8 flex justify-center items-center text-red-500 hover:bg-gray-200 rounded-xl transition"
         >
           <IoCloseOutline className="w-7 h-7" />
         </button>

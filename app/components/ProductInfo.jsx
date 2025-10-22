@@ -146,7 +146,7 @@ const ProductInfo = ({ productDetails }) => {
 
           <button
             onClick={increaseQuantity}
-            className="w-8 h-8 flex items-center justify-center rounded-3xl hover:bg-gray-300 transition"
+            className="w-8 h-8 flex items-center justify-center rounded-xl hover:bg-gray-300 transition"
           >
             <svg
               viewBox="0 0 1024 1024"
@@ -164,14 +164,14 @@ const ProductInfo = ({ productDetails }) => {
       <div className="flex space-x-4">
         <button
           onClick={addToCart}
-          className="px-6 py-3 rounded-3xl border border-gray-300 font-bold hover:text-white hover:bg-black hover:border-black transition-transform duration-200 hover:scale-105"
+          className="px-6 py-3 rounded-xl border border-gray-300 font-bold hover:text-white hover:bg-black hover:border-black transition-transform duration-200 hover:scale-105"
         >
           ADD TO CART
         </button>
 
         <button
           onClick={buyNow}
-          className="px-6 py-3 rounded-3xl bg-primary text-white font-bold hover:bg-primary/80 hover:scale-105 hover:shadow-lg transition-transform duration-200"
+          className="px-6 py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary/80 hover:scale-105 hover:shadow-sm transition-transform duration-200"
         >
           BUY NOW
         </button>

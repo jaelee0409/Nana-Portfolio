@@ -19,7 +19,7 @@ const ShopPage = async () => {
         return (
           <div
             key={product._id}
-            className="relative group cursor-pointer mb-3 md:mb-5 lg:mb-7 shadow-lg rounded-3xl overflow-hidden"
+            className="relative group cursor-pointer mb-3 md:mb-5 lg:mb-7 shadow-sm rounded-xl overflow-hidden"
           >
             <Link href={`/shop/${product.slug.current}`}>
               <Image

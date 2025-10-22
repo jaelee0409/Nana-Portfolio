@@ -176,7 +176,7 @@ const Navbar = () => {
 
       <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}>
         {/* 드로어 */}
-        <div className="absolute right-0 w-full z-50 bg-bg/95 shadow-lg">
+        <div className="absolute right-0 w-full z-50 bg-bg/95 shadow-sm">
           <div className="flex flex-col items-end p-4 space-y-2">
             <Link href="/" onClick={() => setIsMenuOpen(false)}>
               <NextImage

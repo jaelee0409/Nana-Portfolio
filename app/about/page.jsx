@@ -9,7 +9,7 @@ const AboutPage = () => {
           alt="Profile Picture"
           width={669}
           height={729}
-          className="rounded-3xl shadow-lg w-full h-full object-cover"
+          className="rounded-xl shadow-sm w-full h-full object-cover"
         />
       </div>
       <div className="md:w-3/4 lg:w-1/2 lg:px-12 xl:px-16 2xl:pl-24 flex flex-col">
